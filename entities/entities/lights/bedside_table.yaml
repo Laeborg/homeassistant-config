@@ -1,5 +1,0 @@
-platform: group
-name: Bedstand Lights
-entities:
-  - light.bedroom_bed_light_left
-  - light.bedroom_bed_light_right

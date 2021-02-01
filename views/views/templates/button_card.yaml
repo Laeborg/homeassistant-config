@@ -1,6 +1,0 @@
-base: !include button_card/base.yaml
-loader: !include button_card/loader.yaml
-person: !include button_card/person.yaml
-light: !include button_card/light.yaml
-media_player: !include button_card/media_player.yaml
-computer: !include button_card/computer.yaml

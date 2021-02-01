@@ -1,5 +1,0 @@
-platform: group
-name: Coffee Table Lights
-entities:
-  - light.coffee_table_light_left
-  - light.coffee_table_light_right

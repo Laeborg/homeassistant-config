@@ -1,5 +1,0 @@
-platform: group
-name: Bedroom LED Strips
-entities:
-  - light.bedroom_led_strip_left
-  - light.bedroom_led_strip_right

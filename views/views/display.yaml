@@ -1,9 +1,0 @@
-title: Display
-panel: true
-path: lovelace-display
-background: center / cover no-repeat fixed url('/local/images/dashboard.jpg')
-cards:
-  - type: entities
-    entities:
-      - entity: sensor.backyard_temperature_humidity_sensor_temperature
-        name: Temperature & Humidity Sensor temperature
