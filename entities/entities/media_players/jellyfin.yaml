@@ -1,0 +1,4 @@
+platform: emby
+host: !secret emby_hostname
+port: !secret emby_port
+api_key: !secret emby_api_key

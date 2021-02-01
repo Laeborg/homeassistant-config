@@ -1,0 +1,27 @@
+# Entrance Doorbell
+- alias: '[DOORBELL] Entrance'
+  
+  trigger:
+    - platform: state
+      entity_id: sensor.entrance_doorbell_action
+      to: 'single'
+      
+    - platform: state
+      entity_id: sensor.entrance_doorbell_action
+      to: 'double'
+      
+    - platform: state
+      entity_id: sensor.entrance_doorbell_action
+      to: 'hold'
+      
+  action:
+    - service: notify.pushover
+      data:
+        message: Doorbell at Entrance just got pushed
+        title: Doorbell pushed
+            
+    - service: media_player.play_media
+      data:
+        entity_id: group.notification_speakers
+        media_content_id: https://lbrg.duckdns.org:8123/local/sounds/doorbell.mp3
+        media_content_type: music

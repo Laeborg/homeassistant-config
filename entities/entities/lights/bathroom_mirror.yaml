@@ -1,0 +1,5 @@
+platform: group
+name: Bathroom Mirror Lights
+entities:
+  - light.bathroom_mirror_left
+  - light.bathroom_mirror_right

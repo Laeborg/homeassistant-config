@@ -1,0 +1,5 @@
+platform: emby_upcoming_media
+host: !secret emby_hostname
+port: !secret emby_port
+api_key: !secret emby_api_key
+user_id: !secret emby_user_id

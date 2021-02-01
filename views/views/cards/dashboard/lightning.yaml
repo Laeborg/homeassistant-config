@@ -1,0 +1,57 @@
+type: custom:mod-card
+style: |
+  ha-card {
+    padding: 0px 30px 35px;
+    margin-top: -15px;
+  }
+  .card-header {
+    font-size: 26px;
+    font-weight: bold;
+    margin-left: -15px;
+    color: #cdcdcd;
+  }
+card:
+  type: vertical-stack
+  cards:
+    - type: markdown
+      content: Lightning
+      style: |
+        ha-card {
+          background: transparent;
+          box-shadow: none;
+          margin: 15px -15px -10px;
+          font-size: 26px;
+          font-weight: bold;
+        }
+    
+    - type: grid
+      columns: 2
+      cards:
+        
+        # Bathroom Light
+        - type: custom:button-card
+          template: light
+          entity: light.bathroom_light
+          name: Bathroom
+          icon: mdi:ceiling-light
+          
+        # Hallway Light
+        - type: custom:button-card
+          template: light
+          entity: light.hallway_light
+          name: Hallway
+          icon: mdi:ceiling-light
+          
+        # Laundry Room Light
+        - type: custom:button-card
+          template: light
+          entity: light.laundry_room_light
+          name: Laundry Room
+          icon: mdi:ceiling-light
+        
+        # Front Yard Lightning
+        - type: custom:button-card
+          template: light
+          entity: light.front_yard_lights
+          name: Front Yard
+          icon: mdi:coach-lamp

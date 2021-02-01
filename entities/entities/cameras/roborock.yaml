@@ -1,0 +1,5 @@
+platform: xiaomi_cloud_map_extractor
+host: !secret roborock_ip
+token: !secret roborock_token
+username: !secret xiaomi_cloud_username
+password: !secret xiaomi_cloud_password

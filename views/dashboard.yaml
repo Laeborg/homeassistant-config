@@ -1,0 +1,43 @@
+title: Dashboard
+panel: true
+path: overview
+background: center / cover no-repeat fixed url('/local/images/dashboard.jpg')
+cards:
+    
+  # General
+    - type: custom:layout-card-griddier
+      layout: grid
+      gridcols: 22% 70%
+      gridrows: auto auto
+      gridareas: |
+        'sidebar content'
+      gridcols_medium: 30% 70%
+      gridareas_medium: |
+        'sidebar content'
+      gridcols_small: 100%
+      gridareas_small: |
+        'content'
+      cards:
+        
+        # Sidebar
+        - !include cards/dashboard/sidebar.yaml
+          
+        # Content
+        - type: custom:layout-card-griddier
+          layout: vertical
+          cards:
+            
+            # Column 1
+            - !include cards/dashboard/livingroom.yaml
+            - !include cards/dashboard/media.yaml
+            - break
+              
+            # Column 2
+            - !include cards/dashboard/office.yaml
+            - !include cards/dashboard/lightning.yaml
+            - break
+              
+            # Column 3
+            - !include cards/dashboard/bedroom.yaml
+            - !include cards/dashboard/home.yaml
+            - break

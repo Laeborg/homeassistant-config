@@ -1,0 +1,131 @@
+# Turn off Hallway and Bathroom light when night and bedroom lights turns off
+- alias: '[LIGHTNING] Bedroom Bed Light - Turn off hallway and bathroom'
+
+  trigger:
+    - platform: state
+      entity_id: group.bedroom_bed_lightning
+      to: 'off'
+      
+    - platform: state
+      entity_id: group.bedroom_led_strip
+      to: 'off'
+      
+  condition:
+    - condition: state
+      entity_id: alarm_control_panel.home_monitoring
+      state: armed_night
+      
+    - condition: state
+      entity_id: group.bedroom_bed_lightning
+      state: 'off'
+      
+    - condition: state
+      entity_id: group.bedroom_led_strip
+      state: 'off'
+      
+  action:
+    - service: light.turn_off
+      entity_id: light.hallway_light
+      
+    - service: light.turn_off
+      entity_id: light.bathroom_light
+      
+# Turn off Bedroom Lights based on Location Mode and Motion
+- alias: '[LIGHTNING] Bedroom Light - Turn on based on motion (night)'
+
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.bedroom_motion_sensor_occupancy
+      to: 'on'
+      
+  condition:
+    - condition: state
+      entity_id: group.bedroom_bed_lightning
+      state: 'off'
+      
+    - condition: state
+      entity_id: group.bedroom_led_strip
+      state: 'off'
+      
+    - condition: state
+      entity_id: alarm_control_panel.home_monitoring
+      state: 'armed_night'
+      
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: group.bedroom_led_strip
+
+# Turn off Bedroom Lights based on Location Mode and Motion
+- alias: '[LIGHTNING] Bedroom Light - Turn on based on motion (disarmed)'
+
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.bedroom_motion_sensor_occupancy
+      to: 'on'
+      
+  condition:
+    - condition: state
+      entity_id: group.bedroom_bed_lightning
+      state: 'off'
+      
+    - condition: state
+      entity_id: group.bedroom_led_strip
+      state: 'off'
+      
+    - condition: state
+      entity_id: alarm_control_panel.home_monitoring
+      state: 'disarmed'
+      
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: group.bedroom_bed_lightning
+        
+# Turn off Bedroom Lights when no motion if not manually set (night)
+- alias: '[LIGHTNING] Bedroom Light - Turn off if not manually set (night)'
+
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.bedroom_motion_sensor_occupancy
+      to: 'off'
+      for:
+        minutes: 2
+        
+  condition:
+    - condition: state
+      entity_id: alarm_control_panel.home_monitoring
+      state: 'armed_night'
+  
+  action:
+    - service: light.turn_off
+      data:
+        entity_id: group.bedroom_led_strip
+        
+# Turn off Bedroom Lights when no motion if not manually set (other)
+- alias: '[LIGHTNING] Bedroom Light - Turn off if not manually set (disarmed)'
+
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.bedroom_motion_sensor_occupancy
+      to: 'off'
+      for:
+        minutes: 5
+        
+  condition:
+    - condition: state
+      entity_id: alarm_control_panel.home_monitoring
+      state: 'disarmed'
+      
+    - condition: state
+      entity_id: light.bedroom_bed_light_left
+      state: 'on'
+      
+    - condition: state
+      entity_id: light.bedroom_bed_light_right
+      state: 'on'
+  
+  action:
+    - service: light.turn_off
+      data:
+        entity_id: group.bedroom_bed_lightning

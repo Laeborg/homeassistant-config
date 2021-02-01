@@ -1,0 +1,50 @@
+type: custom:mod-card
+style: |
+  ha-card {
+    padding: 0px 30px 35px;
+    margin-top: -15px;
+  }
+  .card-header {
+    font-size: 26px;
+    font-weight: bold;
+    margin-left: -15px;
+    color: #cdcdcd;
+  }
+card:
+  type: vertical-stack
+  cards:
+    - type: markdown
+      content: Bedroom
+      style: |
+        ha-card {
+          background: transparent;
+          box-shadow: none;
+          margin: 15px -15px -10px;
+          font-size: 26px;
+          font-weight: bold;
+        }
+    
+    - type: grid
+      columns: 2
+      cards:
+        
+        # Bedroom Bed Lightning
+        - type: custom:button-card
+          template: light
+          entity: light.bedstand_lights
+          name: Bedside Table
+          icon: mdi:floor-lamp
+        
+        # Bedroom TV
+        - type: custom:button-card
+          template: media_player
+          entity: media_player.bedroom_tv
+          name: TV
+          icon: mdi:television-classic
+          
+        # Bedroom LED Strip
+        - type: custom:button-card
+          template: light
+          entity: light.bedroom_led_strips
+          name: LED Strip
+          icon: mdi:led-strip-variant

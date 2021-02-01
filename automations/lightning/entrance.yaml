@@ -1,0 +1,69 @@
+# Entrance Door Light - Toggle based on sun and time
+- alias: '[LIGHTNING] Entrance Door Light - Toggle based on sun and time'
+
+  trigger:
+    - platform: time
+      at: 05:30
+      
+    - platform: sun
+      event: sunset
+      offset: '-0:30'
+      
+    - platform: time
+      at: 00:00
+      
+    - platform: sun
+      event: sunrise
+      offset: '+0:30'
+
+  action:
+    - service: |
+        {% if trigger.platform == 'sun' %}
+          {% if trigger.event == 'sunset' %}
+            light.turn_on
+          {% else %}
+            light.turn_off
+          {% endif %}
+        {% else %}
+          {% if trigger.now.hour == 0 %}
+            light.turn_off
+          {% else %}
+            light.turn_on
+          {% endif %}
+        {% endif %}
+      data:
+        entity_id: light.entrance_door_light
+      
+# Entrance Light - Turn on when motion
+- alias: '[LIGHTNING] Entrance Light - Turn on/off based on motion'
+  
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.entrance_motion_sensor_occupancy
+      to: 'on'
+      
+  condition:
+    - condition: state
+      entity_id: alarm_control_panel.home_monitoring
+      state: 'disarmed'
+      
+    - condition: state
+      entity_id: sun.sun
+      state: 'below_horizon'
+        
+  action:
+    - service: light.turn_on
+      entity_id: light.entrance_light
+      
+    - wait_for_trigger:
+      - platform: state
+        entity_id: binary_sensor.entrance_motion_sensor_occupancy
+        to: 'off'
+        for:
+          seconds: 30
+      timeout:
+        minutes: 5
+      continue_on_timeout: true
+    
+    - service: light.turn_off
+      entity_id: light.entrance_light

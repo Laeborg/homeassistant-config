@@ -1,0 +1,50 @@
+type: custom:mod-card
+style: |
+  ha-card {
+    padding: 0px 30px 35px;
+    margin-top: -15px;
+  }
+  .card-header {
+    font-size: 26px;
+    font-weight: bold;
+    margin-left: -15px;
+    color: #cdcdcd;
+  }
+card:
+  type: vertical-stack
+  cards:
+    - type: markdown
+      content: Office
+      style: |
+        ha-card {
+          background: transparent;
+          box-shadow: none;
+          margin: 15px -15px -10px;
+          font-size: 26px;
+          font-weight: bold;
+        }
+    
+    - type: grid
+      columns: 2
+      cards:
+
+        # Office Light
+        - type: custom:button-card
+          template: light
+          entity: light.office_light
+          name: Ceiling
+          icon: mdi:ceiling-light
+                  
+        # Desktop PC
+        - type: custom:button-card
+          template: computer
+          entity: sensor.desktoppc_operating_system
+          name: Desktop PC
+          icon: mdi:desktop-tower-monitor
+        
+        # Office Desk LED Strip
+        - type: custom:button-card
+          template: light
+          entity: light.office_desk_led_strip
+          name: LED Strip
+          icon: mdi:led-strip-variant

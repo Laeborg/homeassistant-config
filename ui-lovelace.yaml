@@ -1,0 +1,14 @@
+# Kiosk Mode
+kiosk_mode:
+  hide_header: true
+  mobile_settings:
+    ignore_entity_settings: true
+    custom_width: 768
+
+# Load resources
+button_card_templates: !include views/templates/button_card.yaml
+
+# Views
+views:
+  - !include views/dashboard.yaml
+  - !include views/display.yaml

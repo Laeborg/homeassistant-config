@@ -1,0 +1,66 @@
+# Turn on Office Light if motion and illumiance is low
+- alias: '[LIGHTNING] Office Light - Turn on if motion and illumiance is low'
+
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.office_light_intensity_sensor_illuminance_lux
+      below: 100
+      for:
+        hours: 0
+        minutes: 5
+        seconds: 0
+        
+    - platform: state
+      entity_id: binary_sensor.office_motion_sensor_occupancy
+      to: 'on'
+      
+  condition:
+    - condition: numeric_state
+      entity_id: sensor.office_light_intensity_sensor_illuminance_lux
+      below: 100
+      
+    - condition: or
+      conditions:
+        - condition: state
+          entity_id: binary_sensor.office_motion_sensor_occupancy
+          state: 'on'
+          
+        - condition: template
+          value_template: '{{ (as_timestamp(now()) - as_timestamp(binary_sensor.office_motion_sensor_occupancy)) < 1800 }}'
+      
+    - condition: state
+      entity_id: light.office_light
+      state: 'off'
+        
+  action:
+    service: light.turn_on
+    entity_id: light.office_light
+    
+# Turn off when no motion or hight illumiance
+- alias: '[LIGHTNING] Office Light - Turn off if no motion or high illumiance'
+  
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.office_motion_sensor_occupancy
+      to: 'off'
+      for:
+        hours: 0
+        minutes: 30
+        seconds: 0
+        
+    - platform: numeric_state
+      entity_id: sensor.office_light_intensity_sensor_illuminance_lux
+      above: 130
+      for:
+        hours: 0
+        minutes: 5
+        seconds: 0
+        
+  condition:
+    - condition: state
+      entity_id: light.office_light
+      state: 'on'
+      
+  action:
+    service: light.turn_off
+    entity_id: light.office_light

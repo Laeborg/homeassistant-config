@@ -1,0 +1,27 @@
+# Laundry Room Doorbell
+- alias: '[DOORBELL] Laundry Room'
+  
+  trigger:
+    - platform: state
+      entity_id: sensor.laundry_room_doorbell_action
+      to: 'single'
+      
+    - platform: state
+      entity_id: sensor.laundry_room_doorbell_action
+      to: 'double'
+      
+    - platform: state
+      entity_id: sensor.laundry_room_doorbell_action
+      to: 'hold'
+      
+  action:
+    - service: notify.pushover
+      data:
+        message: Doorbell at Laundry Room just got pushed
+        title: Doorbell pushed
+            
+    - service: media_player.play_media
+      data:
+        entity_id: group.notification_speakers
+        media_content_id: https://lbrg.duckdns.org:8123/local/sounds/doorbell.mp3
+        media_content_type: music
