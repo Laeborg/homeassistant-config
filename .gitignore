@@ -1,0 +1,10 @@
+# Ignore log and database
+home-assistant.log
+home-assistant_v2.db
+.HA_VERSION
+
+# Ensure these files are ignored, otherwise your secret data/credentials will leak.
+ip_bans.yaml
+known_devices.yaml
+secrets.yaml
+service_account.json
