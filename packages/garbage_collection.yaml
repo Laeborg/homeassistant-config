@@ -1,2 +1,2 @@
 garbage_collection:
-  sensors: !include_dir_list ../entities/sensors
+  sensors: !include_dir_list ../entities/garbage_collections
