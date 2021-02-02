@@ -37,3 +37,5 @@ Inspired by [frenck](https://github.com/frenck/home-assistant-config) and [matt8
 - Roborock S60
 - 2 Wiz light bulbs
 - 2 Ubiquiti UniFi® Protect G3 Bullet
+- Samsung UE43TU7005
+- Samsung UE55TU7005
