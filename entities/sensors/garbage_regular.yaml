@@ -1,0 +1,6 @@
+# Regular Waste (Restaffald)
+name: "Regular Waste"
+frequency: "even-weeks"
+collection_days:
+  - tue
+expire_after: '14:00'

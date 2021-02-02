@@ -1,0 +1,6 @@
+# Bio Waste (Madaffald)
+name: "Bio Waste"
+frequency: "odd-weeks"
+collection_days:
+  - tue
+expire_after: '14:00'
