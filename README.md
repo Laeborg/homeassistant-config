@@ -34,4 +34,6 @@ Inspired by [frenck](https://github.com/frenck/home-assistant-config) and [matt8
 - Linak DPG Desk
 
 **WiFi**
+- Roborock S60
 - 2 Wiz light bulbs
+- 2 Ubiquiti UniFi® Protect G3 Bullet
