@@ -8,6 +8,10 @@
       
   condition:
     - condition: state
+      entity_id: light.hallway_light
+      state: 'off'
+      
+    - condition: state
       entity_id: alarm_control_panel.home_monitoring
       state: 'disarmed'
       
@@ -20,9 +24,11 @@
         entity_id: binary_sensor.hallway_motion_sensor_occupancy
         to: 'off'
         for:
-          seconds: 30
+          seconds: 300
+          
       timeout:
-        minutes: 5
+        minutes: 30
+          
       continue_on_timeout: true
       
     - service: light.turn_off
@@ -37,6 +43,10 @@
       to: 'on'
       
   condition:
+    - condition: state
+      entity_id: light.hallway_light
+      state: 'off'
+      
     - condition: state
       entity_id: alarm_control_panel.home_monitoring
       state: 'armed_night'
@@ -60,9 +70,11 @@
         entity_id: binary_sensor.hallway_motion_sensor_occupancy
         to: 'off'
         for:
-          seconds: 30
+          seconds: 120
+          
       timeout:
-        minutes: 2
+        minutes: 15
+        
       continue_on_timeout: true
       
     - service: light.turn_off
