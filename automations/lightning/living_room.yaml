@@ -1,4 +1,4 @@
-# Laundry Room Spots - Toggle based on sun and time
+# Living Room Spots - Toggle based on sun and presence
 - alias: '[LIGHTNING] Living Room TV Spots - Toggle based on sun and location mode'
 
   trigger:
