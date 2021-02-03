@@ -32,10 +32,16 @@ Inspired by [frenck](https://github.com/frenck/home-assistant-config) and [matt8
 
 **Bluetooth**
 - Linak DPG Desk
+- Xiaomi Mi Body Composition Scale 2
 
 **WiFi**
-- Roborock S60
+- Roborock S6
 - 2 Wiz light bulbs
 - 2 Ubiquiti UniFi® Protect G3 Bullet
 - Samsung UE43TU7005
 - Samsung UE55TU7005
+- Playstation 4
+- Lenovo Smart Clock
+- Google Home
+- Google Nest Mini
+- Google Nest Hub
