@@ -4,7 +4,7 @@
   trigger:
     - platform: state
       entity_id: binary_sensor.hallway_motion_sensor_occupancy
-      state: 'on'
+      to: 'on'
       
   condition:
     - condition: state
@@ -34,7 +34,7 @@
   trigger:
     - platform: state
       entity_id: binary_sensor.hallway_motion_sensor_occupancy
-      state: 'on'
+      to: 'on'
       
   condition:
     - condition: state
