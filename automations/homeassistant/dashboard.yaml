@@ -18,8 +18,8 @@
         minutes: 1
         
   action:
-    service: cast.show_lovelace_view
-    data:
-      entity_id: media_player.kitchen_display
-      dashboard_path: lovelace
-      view_path: lovelace-display
+    - service: cast.show_lovelace_view
+      data:
+        entity_id: media_player.kitchen_display
+        dashboard_path: lovelace
+        view_path: lovelace-display
