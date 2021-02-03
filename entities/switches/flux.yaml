@@ -1,0 +1,10 @@
+platform: flux
+name: Flux
+lights:
+  - light.bedstand_lights
+  - light.coffee_table_lights
+  - light.dining_room_light
+  - light.bathroom_light
+  - light.bathroom_mirror_lights
+  - light.hallway_light
+  - light.laundry_room_light

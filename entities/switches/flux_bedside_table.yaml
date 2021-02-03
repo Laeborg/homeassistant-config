@@ -1,4 +1,0 @@
-platform: flux
-name: Flux - Bedside Table Lights
-lights:
-  - light.bedstand_lights
