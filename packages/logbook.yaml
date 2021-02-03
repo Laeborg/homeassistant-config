@@ -2,3 +2,6 @@ logbook:
   exclude:
     domains:
       - media_player
+      - light
+      - switch
+      - group
