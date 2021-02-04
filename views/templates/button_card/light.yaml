@@ -14,8 +14,8 @@ custom_fields:
 tab_action:
   action: call-service
     service: browser_mod.popup
-    service_data:
-      title: 'test'
+    data:
+      title: Test
       card:
         type: entities
         entities:
