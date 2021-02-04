@@ -92,7 +92,12 @@
   trigger:
     - platform: template
       value_template: >
-        {{ as_timestamp(states.timer.bedroom_tv.last_changed) - now().timestamp() < 300 }}
+        {% set hours = state_attr('timer.bedroom_tv', 'remaining').split(':')[0] %}
+        {% set minutes = state_attr('timer.bedroom_tv', 'remaining').split(':')[1] %}
+        {% set seconds = state_attr('timer.bedroom_tv', 'remaining').split(':')[2] %}
+        {% set total = (hours | int * 60 * 60) + (minutes | int * 60) + (seconds | int) %}
+        
+        {{ as_timestamp(states.timer.bedroom_tv.last_changed) - now().timestamp() > total - 300 }}
       
   condition:
     - condition: state
