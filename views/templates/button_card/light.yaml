@@ -18,6 +18,5 @@ tap_action:
     title: '[[[ return entity.attributes.friendly_name ]]]'
     deviceID: this
     card:
-      type: entities
-      entities:
-        [[[ return entity.entity_id ]]]
+      type: custom:light-entity-card
+      entity: [[[ return entity.entity_id ]]]
