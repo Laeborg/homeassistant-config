@@ -1,4 +1,13 @@
 template: ['base', 'loader']
+tab_action:
+  action: call-service
+    service: browser_mod.popup
+    data:
+      title: Test
+      card:
+        type: entities
+        entities:
+          - light.coffee_table_lights
 custom_fields:
   circle: >
     [[[
@@ -11,12 +20,3 @@ custom_fields:
       <text x="50%" y="54%" fill="#8d8e90" font-size="14" text-anchor="middle" alignment-baseline="middle">${brightness}<tspan font-size="10">%</tspan></text></svg>`;
     }
     ]]]
-tab_action:
-  action: call-service
-    service: browser_mod.popup
-    data:
-      title: Test
-      card:
-        type: entities
-        entities:
-          - light.coffee_table_lights
