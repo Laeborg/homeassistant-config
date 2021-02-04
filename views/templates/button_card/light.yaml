@@ -14,10 +14,9 @@ custom_fields:
 tab_action:
   action: call-service
     service: browser_mod.popup
-    data:
-      title: '[[[ return entity.attributes.friendly_name ]]]'
-      deviceID: this
+    service_data:
+      title: 'test'
       card:
         type: entities
         entities:
-          [[[ return entity.entity_id ]]]
+          - light.coffee_table_lights
