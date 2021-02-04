@@ -19,4 +19,4 @@ tap_action:
     deviceID: this
     card:
       type: custom:light-entity-card
-      entity: [[[ return entity ]]]
+      entity: '[[[ return entity.entity_id ]]]'
