@@ -1,4 +1,3 @@
-lovelace_gen:
 lovelace:
   mode: yaml
   resources:
