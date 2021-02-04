@@ -14,7 +14,7 @@ custom_fields:
 tap_action:
   action: call-service
   service: browser_mod.popup
-  data:
+  service_data:
     title: '[[[ return entity.attributes.friendly_name ]]]'
     deviceID: this
     card:
