@@ -76,7 +76,7 @@
   trigger:
     - platform: state
       entity_id: binary_sensor.front_door_contact_sensor_contact
-      to: 'off'
+      to: 'on'
       
   action:
     - service: light.turn_on
@@ -85,7 +85,7 @@
     - wait_for_trigger:
       - platform: state
         entity_id: binary_sensor.front_door_contact_sensor_contact
-        to: 'on'
+        to: 'off'
         for:
           minutes: 5
       timeout:
