@@ -8,3 +8,6 @@ lights:
   - light.bathroom_mirror_lights
   - light.hallway_light
   - light.laundry_room_light
+start_time: "07:00"
+end_time: "23:59"
+mode: mired
