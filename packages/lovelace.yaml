@@ -20,5 +20,5 @@ lovelace:
       type: module
     - url: /hacsfiles/mini-media-player/mini-media-player-bundle.js
       type: module
-    - url: /hacsfiles/light-entity-card/dist/light-entity-card.js
+    - url: /hacsfiles/light-entity-card/light-entity-card.js
       type: module
