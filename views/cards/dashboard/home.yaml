@@ -45,3 +45,9 @@ card:
           entity: alarm_control_panel.home_monitoring
           name: Alarm System
           icon: mdi:alarm-panel
+          
+        # Roborock
+        - type: custom:button-card
+          template: base
+          entity: camera.xiaomi_cloud_map_extractor
+          name: Roborock
