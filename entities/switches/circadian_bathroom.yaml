@@ -1,0 +1,7 @@
+platform: circadian_lighting
+name: Circadian - Bathroom
+lights_ct:
+  - light.bathroom_light
+  - light.toilet_light
+lights_rgb:
+  - light.bathroom_mirror_lights
