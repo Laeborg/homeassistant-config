@@ -48,5 +48,5 @@ card:
           
         # Roborock
         - type: custom:button-card
-          template: base
+          template: vacuum
           entity: vacuum.roborock_s6
