@@ -6,7 +6,7 @@ custom_fields:
   circle: >
     [[[
     if (entity.attributes.battery_level) {
-      const volume = Math.round(entity.attributes.battery_level * 100);
+      const volume = Math.round(entity.attributes.battery_level);
       const radius = 20.5;
       const circumference = radius * 2 * Math.PI;
       
