@@ -7,7 +7,7 @@ state:
         - background-color: 'rgba(0, 0, 0, .6)'
         - color: '#cdcdcd'
       entity_picture:
-        - filter: grayscale(10%)
+        - opacity: .8
 styles:
   entity_picture:
     - position: absolute
@@ -17,4 +17,4 @@ styles:
     - height: 40px
     - clip-path: circle(50% at center)
     - filter: grayscale(100%)
-    - opacity: .8
+    - opacity: .5
