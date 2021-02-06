@@ -2,3 +2,6 @@ platform: circadian_lighting
 name: Hallway
 lights_ct:
   - light.hallway_light
+sleep_entity: alarm_control_panel.home_monitoring
+sleep_state: armed_night
+sleep_brightness: 1
