@@ -31,7 +31,7 @@ card:
         # Bathroom Light
         - type: custom:button-card
           template: light
-          entity: light.bathroom_light
+          entity: light.bathroom_lights
           name: Bathroom
           icon: mdi:ceiling-light
           
