@@ -3,3 +3,4 @@ name: Circadian - Living Room
 lights_ct:
   - light.coffee_table_lights
   - light.dining_room_light
+min_brightness: 25
