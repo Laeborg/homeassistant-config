@@ -1,0 +1,4 @@
+platform: xiaomi_miio
+name: Roborock S6
+host: !secret roborock_ip
+token: !secret roborock_token
