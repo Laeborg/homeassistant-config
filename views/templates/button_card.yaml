@@ -4,3 +4,4 @@ person: !include button_card/person.yaml
 light: !include button_card/light.yaml
 media_player: !include button_card/media_player.yaml
 computer: !include button_card/computer.yaml
+vacuum: !include button_card/vacuum.yaml
