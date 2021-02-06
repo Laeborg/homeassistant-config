@@ -1,5 +1,5 @@
 platform: circadian_lighting
-name: Circadian - Living Room
+name: Living Room
 lights_ct:
   - light.coffee_table_lights
   - light.dining_room_light

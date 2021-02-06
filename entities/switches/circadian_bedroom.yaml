@@ -1,5 +1,5 @@
 platform: circadian_lighting
-name: Circadian - Bedroom
+name: Bedroom
 lights_ct:
   - light.bedstand_lights
 lights_rgb:

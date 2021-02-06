@@ -1,5 +1,5 @@
 platform: circadian_lighting
-name: Circadian - Bathroom
+name: Bathroom
 lights_ct:
   - light.bathroom_light
   - light.toilet_light
