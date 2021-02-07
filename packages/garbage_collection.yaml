@@ -1,16 +1,16 @@
 garbage_collection:
   sensors:
-    - name: "Bio Waste"
-      frequency: "odd-weeks"
-      collection_days: "tue"
-      expire_after: "14:00"
-    - name: "Recycle"
-      frequency: "every-n-weeks"
-      period: 4
-      first_week: 3
-      collection_days: "wed"
-      expire_after: "14:00"
-    - name: "Regular Waste"
-      frequency: "even-weeks"
-      collection_days: "tue"
-      expire_after: "14:00"
+  - name: "Bio Waste"
+    frequency: "odd-weeks"
+    collection_days: "tue"
+    expire_after: "14:00"
+  - name: "Recycle"
+    frequency: "every-n-weeks"
+    period: 4
+    first_week: 3
+    collection_days: "wed"
+    expire_after: "14:00"
+  - name: "Regular Waste"
+    frequency: "even-weeks"
+    collection_days: "tue"
+    expire_after: "14:00"
