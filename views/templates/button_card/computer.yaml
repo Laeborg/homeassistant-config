@@ -7,6 +7,8 @@ state:
         - color: '#5b5b5b'
       icon:
         - color: '#5b5b5b'
+state_display: >
+  [[[ return entity.state !== 'Unavailable' ? 'On' : 'Off'; ]]]
 styles:
   card:
     - background-color: 'rgba(0, 0, 0, .6)'
