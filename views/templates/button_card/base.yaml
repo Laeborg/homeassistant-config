@@ -13,7 +13,7 @@ styles:
   img_cell:
     - position: absolute
     - top: 10px
-    - left: 10px
+    - left: 5px
     - width: 50px
     - height: 50px
   icon:
