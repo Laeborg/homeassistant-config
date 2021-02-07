@@ -70,13 +70,13 @@
 
   trigger:
     - platform: state
-      entity_id: sensor.desktoppc_online_state
+      entity_id: sensor.desktoppc_cpu_usage
       
   action:
     - service: |
-        {% if trigger.to_state.state == 'online' %}
-          light.turn_on
-        {% else %}
+        {% if trigger.to_state.state == 'unavailable' %}
           light.turn_off
+        {% else %}
+          light.turn_on
         {% endif %}
       entity_id: light.office_desk_led_strip
