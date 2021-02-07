@@ -54,4 +54,4 @@ card:
           template: media_player
           entity: media_player.bedroom_clock
           name: Clock
-          icon: mdi:clock-digital
+          icon: mdi:alarm
