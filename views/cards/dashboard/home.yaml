@@ -44,7 +44,7 @@ card:
           template: base
           entity: alarm_control_panel.home_monitoring
           name: Alarm System
-          icon: mdi:alarm-panel
+          icon: mdi:security
           
         # Roborock
         - type: custom:button-card
