@@ -40,7 +40,7 @@ card:
           template: computer
           entity: sensor.desktoppc_cpu_usage
           name: Desktop PC
-          icon: mdi:desktop-tower-monitor
+          icon: mdi:desktop-tower
         
         # Office Desk LED Strip
         - type: custom:button-card
