@@ -24,7 +24,6 @@ styles:
     - margin: 0px
     - max-height: 50px
     - height: auto
-    - max-width: 50px
     - width: auto
   name:
     - position: absolute
