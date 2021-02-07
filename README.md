@@ -33,7 +33,7 @@ Inspired by [frenck](https://github.com/frenck/home-assistant-config) and [matt8
 - 3 LIDL Livarno Lux smart LED light strip (HG06104A)
 
 **Bluetooth**
-- Linak DPG Desk (via [hass-linak-dpg](https://github.com/Laeborg/hass-linak-dpg))
+- Linak DPG Desk (via my [hass-linak-dpg](https://github.com/Laeborg/hass-linak-dpg) integration)
 - Xiaomi Mi Body Composition Scale 2
 
 **WiFi**
