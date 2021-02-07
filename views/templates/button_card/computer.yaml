@@ -1,6 +1,6 @@
 template: ['base']
 state:
-  - value: 'online'
+  - value: 'Online'
     styles:
       card:
         - background-color: 'rgba(0, 0, 0, .6)'
