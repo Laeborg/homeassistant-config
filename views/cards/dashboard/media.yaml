@@ -24,6 +24,6 @@ card:
           font-weight: bold;
         }
         
-    - type: custom:upcoming-media-card
+    - type: custom:button-card
       entity: sensor.emby_latest_movies
-      title: Latest Movies
+      name: ''
