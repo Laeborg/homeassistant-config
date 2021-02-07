@@ -13,7 +13,7 @@ styles:
   img_cell:
     - position: absolute
     - top: 5%
-    - left: 10%
+    - left: 6%
   icon:
     - position: absolute
     - top: 0
