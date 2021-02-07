@@ -1,4 +1,13 @@
 template: ['base']
+state:
+  - value: 'disarmed'
+    icon: 'mdi:shield-off'
+  - value: 'armed_night'
+    icon: 'mdi:shield-home'
+  - value: 'armed_home'
+    icon: 'mdi:shield-home'
+  - value: 'armed_away'
+    icon: 'mdi:shield-lock'
 styles:
   icon:
     - color: '#cdcdcd'
