@@ -38,7 +38,7 @@ card:
         # Desktop PC
         - type: custom:button-card
           template: computer
-          entity: sensor.desktoppc_operating_system
+          entity: sensor.desktoppc_online_state
           name: Desktop PC
           icon: mdi:desktop-tower-monitor
         
