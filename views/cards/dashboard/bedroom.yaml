@@ -33,7 +33,7 @@ card:
           template: light
           entity: light.bedstand_lights
           name: Bedside Table
-          icon: mdi:floor-lamp
+          icon: mdi:lamp
         
         # Bedroom TV
         - type: custom:button-card
