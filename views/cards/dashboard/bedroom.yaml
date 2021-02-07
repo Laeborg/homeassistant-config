@@ -48,3 +48,10 @@ card:
           entity: light.bedroom_led_strips
           name: LED Strip
           icon: mdi:led-strip-variant
+        
+        # Bedroom TV
+        - type: custom:button-card
+          template: media_player
+          entity: media_player.bedroom_clock
+          name: Clock
+          icon: mdi:clock-digital
