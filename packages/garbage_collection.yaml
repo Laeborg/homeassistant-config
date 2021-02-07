@@ -3,7 +3,7 @@ garbage_collection:
     - name: "Bio Waste"
       frequency: "odd-weeks"
       collection_days:
-        - tue
+      - tue
       expire_after: '14:00'
       
     - name: "Recycle"
@@ -11,11 +11,11 @@ garbage_collection:
       period: 4
       first_week: 3
       collection_days:
-        - wed
+      - wed
       expire_after: '14:00'
       
     - name: "Regular Waste"
       frequency: "even-weeks"
       collection_days:
-        - tue
+      - tue
       expire_after: '14:00'
