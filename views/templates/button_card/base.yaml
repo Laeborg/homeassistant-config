@@ -22,6 +22,9 @@ styles:
     - left: auto
     - color: '#5b5b5b'
     - margin: 0px
+    - height: 50px
+    - max-width: 50px
+    - width: auto
   name:
     - position: absolute
     - bottom: 30px
