@@ -1,0 +1,7 @@
+template: ['base']
+styles:
+  icon:
+    - color: '#cdcdcd'
+  card:
+    - background-color: 'rgba(0, 0, 0, .6)'
+    - color: '#cdcdcd'

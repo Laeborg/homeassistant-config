@@ -41,7 +41,7 @@ card:
               
         # Location Mode
         - type: custom:button-card
-          template: base
+          template: alarm_panel
           entity: alarm_control_panel.home_monitoring
           name: Alarm System
           icon: mdi:security
