@@ -2,6 +2,7 @@
 home-assistant.log
 home-assistant_v2.db
 .HA_VERSION
+.ftpconfig
 
 # Ensure these files are ignored, otherwise your secret data/credentials will leak.
 ip_bans.yaml
