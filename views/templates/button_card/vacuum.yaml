@@ -1,4 +1,12 @@
 template: ['base']
+state:
+  - value: 'unavailable'
+    styles:
+      card:
+        - background-color: 'rgba(0, 0, 0, .2)'
+        - color: '#5b5b5b'
+      icon:
+        - color: '#5b5b5b'
 styles:
   icon:
     - color: '#cdcdcd'
