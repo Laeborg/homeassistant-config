@@ -6,6 +6,8 @@
 
 Inspired by [frenck](https://github.com/frenck/home-assistant-config) and [matt8707](https://github.com/matt8707/hass-config) - check out their awesome configurations too.
 
+![Dashboard](/Screenshots/Dashboard.png)
+
 ## Adapters
 - Zigbee: CC2652RB from Slaeh's iot stuff
 - Bluetooth: Logilink BC8510
