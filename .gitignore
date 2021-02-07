@@ -9,3 +9,6 @@ ip_bans.yaml
 known_devices.yaml
 secrets.yaml
 service_account.json
+
+# Ignore Development Files
+custom_components/linak_dpg
