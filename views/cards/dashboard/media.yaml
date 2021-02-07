@@ -26,4 +26,4 @@ card:
         
     - type: custom:button-card
       entity: sensor.emby_latest_movies
-      name: ''
+      template: emby
