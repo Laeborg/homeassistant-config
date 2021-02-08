@@ -4,12 +4,13 @@
   trigger:
     - platform: state
       entity_id: sensor.mailbox_sensor_action
+      to: 'tilt'
       
   action:
     - service: notify.pushover
       data:
-        message: "Mailbox Sensor got triggered: {{ trigger.to_state.state }}"
-        title: You have mail
+        message: Mailbox Sensor got triggered
+        title: Check Mailbox
             
     #- service: media_player.play_media
     #  data:
