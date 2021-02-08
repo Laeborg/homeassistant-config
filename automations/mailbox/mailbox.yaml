@@ -1,0 +1,18 @@
+# Entrance Doorbell
+- alias: '[MAILBOX] Mailbox triggered'
+  
+  trigger:
+    - platform: state
+      entity_id: sensor.mailbox_sensor_action
+      
+  action:
+    - service: notify.pushover
+      data:
+        message: Mailbox Sensor got triggered: {{ trigger.to_state.state }}
+        title: You have mail
+            
+    #- service: media_player.play_media
+    #  data:
+    #    entity_id: group.notification_speakers
+    #    media_content_id: https://lbrg.duckdns.org:8123/local/sounds/mailbox.mp3
+    #    media_content_type: music
