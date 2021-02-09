@@ -19,7 +19,7 @@
       from: home
   
   action:
-    - service: >
+    - service: |
         {% if trigger.to_state.state == 'home' %}
           alarm_control_panel.alarm_disarm
         {% else %}
