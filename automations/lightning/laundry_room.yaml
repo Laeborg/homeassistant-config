@@ -78,6 +78,15 @@
       entity_id: binary_sensor.front_door_contact_sensor_contact
       to: 'on'
       
+    - platform: state
+      entity_id: binary_sensor.kitchen_door_sensor_contact
+      to: 'on'
+      
+  condition:
+    - condition: state
+      entity_id: light.laundry_room_light
+      state: 'off'
+      
   action:
     - service: light.turn_on
       entity_id: light.laundry_room_light
@@ -88,8 +97,16 @@
         to: 'off'
         for:
           minutes: 5
+          
+      - platform: state
+        entity_id: binary_sensor.kitchen_door_sensor_contact
+        to: 'off'
+        for:
+          minutes: 5
+          
       timeout:
-        minutes: 15
+        minutes: 60
+        
       continue_on_timeout: true
     
     - service: light.turn_off
