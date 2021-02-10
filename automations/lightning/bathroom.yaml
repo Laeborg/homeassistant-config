@@ -34,7 +34,7 @@
         below: 75
         
       timeout:
-        minutes: 30
+        minutes: 60
         
       continue_on_timeout: true
       
@@ -87,7 +87,7 @@
         below: 75
         
       timeout:
-        minutes: 30
+        minutes: 60
         
       continue_on_timeout: true
       
