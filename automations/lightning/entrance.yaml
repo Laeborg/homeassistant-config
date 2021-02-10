@@ -50,6 +50,10 @@
     - condition: state
       entity_id: sun.sun
       state: 'below_horizon'
+      
+    - condition: state
+      entity_id: light.entrance_light
+      state: 'off'
         
   action:
     - service: light.turn_on
