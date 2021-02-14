@@ -51,6 +51,7 @@ card:
           
         # Office Desk
         - type: custom:button-card
-          template: base
+          template: desk
           entity: sensor.office_desk
+          name: Desk
           icon: mdi:desk

@@ -7,3 +7,4 @@ computer: !include button_card/computer.yaml
 vacuum: !include button_card/vacuum.yaml
 alarm_panel: !include button_card/alarm_panel.yaml
 emby: !include button_card/emby.yaml
+desk: !include button_card/desk.yaml
