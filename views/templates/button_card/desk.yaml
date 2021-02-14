@@ -19,7 +19,7 @@ custom_fields:
   circle: >
     [[[
     if (entity.state !== 'off') {
-      const height = round(entity.state, 0)
+      const height = Math.round(entity.state, 0)
       const volume = Math.round(50 / height);
       const radius = 20.5;
       const circumference = radius * 2 * Math.PI;
