@@ -56,11 +56,3 @@
               0.5
             {% endif %}
           {% endif %}
-          
-    - service: |
-        {% if trigger.to_state.state == 'disarmed' %}
-          switch.turn_on
-        {% else %}
-          switch.turn_off
-        {% endif %}
-      entity_id: switch.flux
