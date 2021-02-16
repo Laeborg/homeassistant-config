@@ -3,7 +3,11 @@
 
   trigger:
     - platform: state
-      entity_id: binary_sensor.hallway_motion_sensor_occupancy
+      entity_id: binary_sensor.hallway_motion_sensor_1_occupancy
+      to: 'on'
+      
+    - platform: state
+      entity_id: binary_sensor.hallway_motion_sensor_2_occupancy
       to: 'on'
       
   condition:
@@ -21,7 +25,13 @@
       
     - wait_for_trigger:
       - platform: state
-        entity_id: binary_sensor.hallway_motion_sensor_occupancy
+        entity_id: binary_sensor.hallway_motion_sensor_1_occupancy
+        to: 'off'
+        for:
+          seconds: 300
+          
+      - platform: state
+        entity_id: binary_sensor.hallway_motion_sensor_2_occupancy
         to: 'off'
         for:
           seconds: 300
@@ -39,7 +49,11 @@
 
   trigger:
     - platform: state
-      entity_id: binary_sensor.hallway_motion_sensor_occupancy
+      entity_id: binary_sensor.hallway_motion_sensor_1_occupancy
+      to: 'on'
+      
+    - platform: state
+      entity_id: binary_sensor.hallway_motion_sensor_2_occupancy
       to: 'on'
       
   condition:
@@ -67,7 +81,13 @@
       
     - wait_for_trigger:
       - platform: state
-        entity_id: binary_sensor.hallway_motion_sensor_occupancy
+        entity_id: binary_sensor.hallway_motion_sensor_1_occupancy
+        to: 'off'
+        for:
+          seconds: 120
+          
+      - platform: state
+        entity_id: binary_sensor.hallway_motion_sensor_2_occupancy
         to: 'off'
         for:
           seconds: 120
