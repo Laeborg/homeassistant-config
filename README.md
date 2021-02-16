@@ -14,12 +14,14 @@ Inspired by [frenck](https://github.com/frenck/home-assistant-config) and [matt8
 
 ## Devices
 **Zigbee**
-- 10 SmartThings Multipurpose Sensor (IM6001-MPP01)
-- 4 SmartThings Motion Detector (IM6001-MTP01)
+- 11 SmartThings Multipurpose Sensor (IM6001-MPP01)
+- 5 SmartThings Motion Detector (IM6001-MTP01)
 - 2 Xiaomi MiJia light intensity sensor (GZCGQ01LM)
-- 3 Xiaomi MiJia door & window contact sensor (MCCGQ01LM)
+- 2 Xiaomi MiJia door & window contact sensor (MCCGQ01LM)
 - 2 Xiaomi MiJia temperature & humidity sensor (WSDCGQ01LM)
 - 2 Xiaomi Aqara wireless switch (WXKG11LM)
+- 2 Xiaomi Aqara vibration sensor (DJT11LM)
+- 3 Xiaomi Aqara door & window contact sensor (MCCGQ11LM)
 - 4 IKEA TRADFRI LED bulb E14 600 lumen (LED1733G7)
 - 5 IKEA TRADFRI LED bulb E27 1000 lumen (LED1732G11)
 - 1 IKEA FLOALT LED light panel (L1527)
