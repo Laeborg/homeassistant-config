@@ -49,3 +49,4 @@ Inspired by [frenck](https://github.com/frenck/home-assistant-config) and [matt8
 - Google Home
 - Google Nest Mini
 - Google Nest Hub
+- 4 Shelly1
