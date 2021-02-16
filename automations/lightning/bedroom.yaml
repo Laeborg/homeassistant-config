@@ -13,7 +13,7 @@
   condition:
     - condition: state
       entity_id: alarm_control_panel.home_monitoring
-      state: armed_night
+      state: 'armed_night'
       
     - condition: state
       entity_id: group.bedroom_bed_lightning
