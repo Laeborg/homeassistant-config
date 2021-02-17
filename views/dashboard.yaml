@@ -23,8 +23,8 @@ cards:
         - !include cards/dashboard/sidebar.yaml
           
         # Content
-        - type: custom:layout-card-griddier
-          layout: vertical
+        - type: grid
+          gridarea: sidebar
           cards:
             
             # Column 1
