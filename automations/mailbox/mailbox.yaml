@@ -4,7 +4,6 @@
   trigger:
     - platform: state
       entity_id: sensor.mailbox_sensor_action
-      to: 'tilt'
       
   action:
     - service: notify.pushover
@@ -17,3 +16,6 @@
         entity_id: group.notification_speakers
         media_content_id: https://lbrg.duckdns.org:8123/local/sounds/mailbox.wav
         media_content_type: music
+    
+    - delay:
+        minutes: 2
