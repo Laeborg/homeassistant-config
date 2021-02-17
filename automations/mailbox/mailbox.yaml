@@ -4,6 +4,7 @@
   trigger:
     - platform: state
       entity_id: sensor.mailbox_sensor_action
+      to: 'vibration'
       
   action:
     - service: notify.pushover
