@@ -14,9 +14,9 @@ cards:
       gridcols_medium: 30% 70%
       gridareas_medium: |
         'sidebar content'
-      gridcols_small: 100%
+      gridcols_small: 0% 100%
       gridareas_small: |
-        'content'
+        'sidebar content'
       cards:
         
         # Sidebar
