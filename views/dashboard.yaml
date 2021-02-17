@@ -24,7 +24,7 @@ cards:
           
         # Content
         - type: grid
-          gridarea: sidebar
+          gridarea: content
           cards:
             
             # Column 1
