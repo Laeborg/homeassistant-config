@@ -26,15 +26,9 @@ cards:
         - type: grid
           gridarea: content
           cards:
-            
-            # Column 1
             - !include cards/dashboard/livingroom.yaml
-            - !include cards/dashboard/media.yaml
-              
-            # Column 2
             - !include cards/dashboard/office.yaml
-            - !include cards/dashboard/lightning.yaml
-              
-            # Column 3
             - !include cards/dashboard/bedroom.yaml
+            - !include cards/dashboard/media.yaml
+            - !include cards/dashboard/lightning.yaml
             - !include cards/dashboard/home.yaml
