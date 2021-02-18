@@ -46,7 +46,7 @@ card:
         - type: custom:button-card
           template: light
           entity: light.office_desk_led_strip
-          name: LED Strip
+          name: Desk LED
           icon: mdi:led-strip-variant
           
         # Office Desk
