@@ -1,20 +1,44 @@
-# Washing Machine
-- alias: '[ELECTRONIC] Washing Machine is done'
+# Washing Machine - Activate when vibrations starts
+- alias: '[ELECTRONIC] Washing Machine - Turn On'
   
   trigger:
-    - platform: state
-      entity_id: sensor.washing_machine_sensor_action
-      from: 'vibration'
-      for:
-        minutes: 5
+    - platform: numeric_state
+      entity_id: sensor.washing_machine_sensor_strength
+      above: 50
+        
+  condition:
+    - condition: state
+      entity_id: input_boolean.washing_machine
+      state: 'off'
+
+  action:
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.washing_machine
+        
+# Washing Machine - Deactivate and notify when finish
+- alias: '[ELECTRONIC] Washing Machine - Turn Off'
+  
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.washing_machine_sensor_strength
+      below: 100
+        
+  condition:
+    - condition: state
+      entity_id: input_boolean.washing_machine
+      state: 'on'
       
   action:
     - service: notify.pushover
       data:
         message: Washing Machine sensor haven't been activated for 5 minutes.
-        title: Washing Machine is done
+        title: Washing Machine Finished
             
     - service: tts.google_translate_say
       entity_id: group.notification_speakers
       data:
-        message: Washing Machine is done.
+        message: Your Wash is Finished
+        
+    action:
+      - service: input_boolean.turn_off
+        entity_id: input_boolean.washing_machine
