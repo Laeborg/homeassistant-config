@@ -37,7 +37,7 @@
     - service: tts.google_translate_say
       entity_id: group.notification_speakers
       data:
-        message: Your Wash is Finished
+        message: Washing Machine is Finish
         
     action:
       - service: input_boolean.turn_off
