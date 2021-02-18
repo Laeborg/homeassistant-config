@@ -1,0 +1,20 @@
+# Entrance Doorbell
+- alias: '[MAILBOX] Mailbox triggered'
+  
+  trigger:
+    - platform: state
+      entity_id: sensor.washing_machine_sensor_action
+      to: ''
+      for:
+        minutes: 5
+      
+  action:
+    - service: notify.pushover
+      data:
+        message: Washing Machine sensor haven't been activated for 5 minutes.
+        title: Washing Machine is done
+            
+    - service: tts.google_translate_say
+      entity_id: group.notification_speakers
+      data:
+        message: Washing Machine is done.
