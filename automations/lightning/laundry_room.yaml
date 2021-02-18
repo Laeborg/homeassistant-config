@@ -32,7 +32,7 @@
           {% endif %}
         {% endif %}
       data:
-        entity_id: switch.shelly1
+        entity_id: switch.laundry_room_spots
       
 # Front Door Light - Toggle based on sun and time
 - alias: '[LIGHTNING] Front Door Light - Toggle based on sun and time'
