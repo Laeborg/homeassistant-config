@@ -1,0 +1,4 @@
+platform: circadian_lighting
+name: Office
+lights_ct:
+  - light.office_light
