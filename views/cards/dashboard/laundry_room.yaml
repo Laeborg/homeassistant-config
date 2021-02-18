@@ -14,7 +14,7 @@ card:
   type: vertical-stack
   cards:
     - type: markdown
-      content: Lightning
+      content: Laundry Room
       style: |
         ha-card {
           background: transparent;
@@ -28,23 +28,30 @@ card:
       columns: 2
       cards:
         
-        # Bathroom Light
+        # Laundry Room Light
         - type: custom:button-card
           template: light
-          entity: light.bathroom_lights
-          name: Bathroom
+          entity: light.laundry_room_light
+          name: Ceiling
           icon: mdi:ceiling-light
           
-        # Hallway Light
+        # Laundry Room Spots
         - type: custom:button-card
           template: light
-          entity: light.hallway_light
-          name: Hallway
-          icon: mdi:ceiling-light
+          entity: switch.shelly1
+          name: Spots
+          icon: mdi:track-light
         
-        # Front Yard Lightning
+        # Washing Machine
         - type: custom:button-card
-          template: light
-          entity: light.front_yard_lights
-          name: Front Yard
-          icon: mdi:coach-lamp
+          template: washing_machine
+          entity: input_boolean.washing_machine
+          name: Washing Machine
+          icon: mdi:washing-machine
+          
+        # Tumble Dryer
+        - type: custom:button-card
+          template: tumble_dryer
+          entity: input_boolean.tumble_dryer
+          name: Tumble Dryer
+          icon: mdi:tumble-dryer

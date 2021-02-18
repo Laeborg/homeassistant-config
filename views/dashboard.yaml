@@ -29,6 +29,6 @@ cards:
             - !include cards/dashboard/livingroom.yaml
             - !include cards/dashboard/office.yaml
             - !include cards/dashboard/bedroom.yaml
-            - !include cards/dashboard/media.yaml
+            - !include cards/dashboard/laundry_room.yaml
             - !include cards/dashboard/lightning.yaml
             - !include cards/dashboard/home.yaml
