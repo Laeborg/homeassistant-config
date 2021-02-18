@@ -38,7 +38,6 @@
       entity_id: group.notification_speakers
       data:
         message: Tumble Dryer is Finish
-        
-    action:
-      - service: input_boolean.turn_off
-        entity_id: input_boolean.tumble_dryer
+
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.tumble_dryer
