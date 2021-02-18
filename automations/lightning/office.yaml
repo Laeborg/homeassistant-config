@@ -70,7 +70,7 @@
 
   trigger:
     - platform: state
-      entity_id: sensor.desktoppc_cpu_usage
+      entity_id: sensor.desktoppc_cpuloadsensor
       
   action:
     - service: |
