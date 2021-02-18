@@ -28,12 +28,26 @@ card:
       columns: 2
       cards:
         
+        # Front Yard Lightning
+        - type: custom:button-card
+          template: light
+          entity: light.front_yard_lights
+          name: Front Yard
+          icon: mdi:coach-lamp
+          
         # Bathroom Light
         - type: custom:button-card
           template: light
           entity: light.bathroom_lights
           name: Bathroom
-          icon: mdi:ceiling-light
+          icon: mdi:scale-bathroom
+          
+        # Toilet Light
+        - type: custom:button-card
+          template: light
+          entity: light.toilet_light
+          name: Toilet
+          icon: mdi:toilet
           
         # Hallway Light
         - type: custom:button-card
@@ -41,10 +55,3 @@ card:
           entity: light.hallway_light
           name: Hallway
           icon: mdi:ceiling-light
-        
-        # Front Yard Lightning
-        - type: custom:button-card
-          template: light
-          entity: light.front_yard_lights
-          name: Front Yard
-          icon: mdi:coach-lamp
