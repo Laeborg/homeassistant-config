@@ -1,10 +1,10 @@
-# Entrance Doorbell
-- alias: '[MAILBOX] Mailbox triggered'
+# Washing Machine
+- alias: '[ELECTRONIC] Washing Machine is done'
   
   trigger:
     - platform: state
       entity_id: sensor.washing_machine_sensor_action
-      to: ''
+      from: 'vibration'
       for:
         minutes: 5
       
