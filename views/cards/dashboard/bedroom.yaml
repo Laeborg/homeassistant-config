@@ -46,7 +46,7 @@ card:
         - type: custom:button-card
           template: light
           entity: light.bedroom_led_strips
-          name: LED Strip
+          name: Bed LED
           icon: mdi:led-strip-variant
         
         # Bedroom TV
