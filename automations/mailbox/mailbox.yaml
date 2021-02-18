@@ -1,10 +1,15 @@
-# Entrance Doorbell
-- alias: '[MAILBOX] Mailbox triggered'
+# Active Mailbox Notification if strength is above 15
+- alias: '[MAILBOX] Active Notification'
   
   trigger:
-    - platform: state
-      entity_id: sensor.mailbox_sensor_action
-      to: 'vibration'
+    - platform: numeric_state
+      entity_id: sensor.mailbox_sensor_strength
+      above: 15
+      
+  condition:
+    - condition: state
+      entity_id: input_boolean.mailbox
+      state: 'off'
       
   action:
     - service: notify.pushover
@@ -17,6 +22,23 @@
         entity_id: group.notification_speakers
         media_content_id: https://lbrg.duckdns.org:8123/local/sounds/mailbox.wav
         media_content_type: music
-    
-    - delay:
-        minutes: 2
+        
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.mailbox
+        
+# Deactive Mailbox Notification is strength drop below 15
+- alias: '[MAILBOX] Deactivate Notification'
+
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.mailbox_sensor_strength
+      below: 15
+      
+  condition:
+    - condition: state
+      entity_id: input_boolean.mailbox
+      state: 'on'
+      
+  action:
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.mailbox
