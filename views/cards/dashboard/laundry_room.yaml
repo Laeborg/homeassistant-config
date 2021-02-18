@@ -46,7 +46,7 @@ card:
         - type: custom:button-card
           template: appliance
           entity: input_boolean.washing_machine
-          name: Washing Machine
+          name: Washer
           icon: mdi:washing-machine
           
         # Tumble Dryer
