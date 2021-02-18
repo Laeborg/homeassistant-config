@@ -39,6 +39,5 @@
       data:
         message: Washing Machine is Finish
         
-    action:
-      - service: input_boolean.turn_off
-        entity_id: input_boolean.washing_machine
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.washing_machine
