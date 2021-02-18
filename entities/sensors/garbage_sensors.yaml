@@ -1,0 +1,28 @@
+platform: template
+  sensors:
+    garbage_collection_regular:
+      friendly_name: Garbage Collection - Regular Waste
+      value_template: states.sensor.garbage_collection.attributes["services"]["dagrenovation_0"]["next"]["date"]
+      attribute_templates:
+        date: '{{ states.sensor.garbage_collection.attributes["services"]["dagrenovation_0"]["next"]["date"] }}'
+        schedule: '{{ states.sensor.garbage_collection.attributes["services"]["dagrenovation_0"]["schedule"] }}'
+        title: '{{ states.sensor.garbage_collection.attributes["services"]["dagrenovation_0"]["title"] }}'
+        price: '{{ states.sensor.garbage_collection.attributes["services"]["dagrenovation_0"]["price"] }}'
+        
+    garbage_collection_biowaste:
+      friendly_name: Garbage Collection - Biowaste
+      value_template: states.sensor.garbage_collection.attributes["services"]["dagrenovation_1"]["next"]["date"]
+      attribute_templates:
+        date: '{{ states.sensor.garbage_collection.attributes["services"]["dagrenovation_1"]["next"]["date"] }}'
+        schedule: '{{ states.sensor.garbage_collection.attributes["services"]["dagrenovation_1"]["schedule"] }}'
+        title: '{{ states.sensor.garbage_collection.attributes["services"]["dagrenovation_1"]["title"] }}'
+        price: '{{ states.sensor.garbage_collection.attributes["services"]["dagrenovation_1"]["price"] }}'
+        
+    garbage_collection_recycle:
+      friendly_name: Garbage Collection - Recycle
+      value_template: states.sensor.garbage_collection.attributes["services"]["genbrug_0"]["next"]["date"]
+      attribute_templates:
+        date: '{{ states.sensor.garbage_collection.attributes["services"]["genbrug_0"]["next"]["date"] }}'
+        schedule: '{{ states.sensor.garbage_collection.attributes["services"]["genbrug_0"]["schedule"] }}'
+        title: '{{ states.sensor.garbage_collection.attributes["services"]["genbrug_0"]["title"] }}'
+        price: '{{ states.sensor.garbage_collection.attributes["services"]["genbrug_0"]["price"] }}'
