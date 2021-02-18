@@ -4,7 +4,7 @@
   trigger:
     - platform: numeric_state
       entity_id: sensor.tumble_dryer_sensor_strength
-      above: 50
+      above: 100
         
   condition:
     - condition: state
