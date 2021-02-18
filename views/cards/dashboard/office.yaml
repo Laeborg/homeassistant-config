@@ -38,7 +38,7 @@ card:
         # Desktop PC
         - type: custom:button-card
           template: computer
-          entity: sensor.desktoppc_cpu_usage
+          entity: sensor.desktoppc_cpuloadsensor
           name: Desktop PC
           icon: mdi:desktop-tower
         
