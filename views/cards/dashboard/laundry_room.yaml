@@ -44,14 +44,14 @@ card:
         
         # Washing Machine
         - type: custom:button-card
-          template: washing_machine
+          template: appliance
           entity: input_boolean.washing_machine
           name: Washing Machine
           icon: mdi:washing-machine
           
         # Tumble Dryer
         - type: custom:button-card
-          template: tumble_dryer
+          template: appliance
           entity: input_boolean.tumble_dryer
           name: Tumble Dryer
           icon: mdi:tumble-dryer
