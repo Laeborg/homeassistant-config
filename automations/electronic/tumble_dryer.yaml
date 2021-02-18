@@ -1,0 +1,44 @@
+# Tumble Dryer - Activate when vibrations starts
+- alias: '[ELECTRONIC] Tumble Dryer - Turn On'
+  
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.tumble_dryer_sensor_strength
+      above: 50
+        
+  condition:
+    - condition: state
+      entity_id: input_boolean.tumble_dryer
+      state: 'off'
+
+  action:
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.tumble_dryer
+        
+# Tumble Dryer - Deactivate and notify when finish
+- alias: '[ELECTRONIC] Tumble Dryer - Turn Off'
+  
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.tumble_dryer_sensor_strength
+      below: 100
+        
+  condition:
+    - condition: state
+      entity_id: input_boolean.tumble_dryer
+      state: 'on'
+      
+  action:
+    - service: notify.pushover
+      data:
+        message: Tumble Dryer sensor haven't been activated for 5 minutes.
+        title: Tumble Dryer Finished
+            
+    - service: tts.google_translate_say
+      entity_id: group.notification_speakers
+      data:
+        message: Tumble Dryer is Finish
+        
+    action:
+      - service: input_boolean.turn_off
+        entity_id: input_boolean.tumble_dryer
