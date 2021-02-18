@@ -53,5 +53,5 @@ card:
         - type: custom:button-card
           template: light
           entity: light.living_room_tv_spots
-          name: TV Spots
+          name: Spots
           icon: mdi:track-light
