@@ -35,10 +35,10 @@ Inspired by [frenck](https://github.com/frenck/home-assistant-config) and [matt8
 - 3 LIDL Livarno Lux smart LED light strip (HG06104A)
 
 **Bluetooth**
-- Linak DPG Desk (via my [hass-linak-dpg](https://github.com/Laeborg/hass-linak-dpg) integration)
+- Linak DPG Desk (via [hass-linak-dpg](https://github.com/Laeborg/hass-linak-dpg))
 - Xiaomi Mi Body Composition Scale 2
 
-**WiFi**
+**WiFi/LAN**
 - Roborock S6
 - 2 Wiz light bulbs
 - 2 Ubiquiti UniFi® Protect G3 Bullet
@@ -50,3 +50,4 @@ Inspired by [frenck](https://github.com/frenck/home-assistant-config) and [matt8
 - Google Nest Mini
 - Google Nest Hub
 - 4 Shelly1
+- Desktop PC (via [hass-workstation-service](https://github.com/sleevezipper/hass-workstation-service))
