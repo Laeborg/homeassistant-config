@@ -38,7 +38,7 @@ card:
         # Laundry Room Spots
         - type: custom:button-card
           template: light
-          entity: switch.shelly1
+          entity: switch.laundry_room_spots
           name: Spots
           icon: mdi:track-light
         
