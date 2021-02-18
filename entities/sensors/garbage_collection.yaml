@@ -1,0 +1,7 @@
+platform: rest
+name: Garbage Collection
+resource: !secret garbage_collection_url
+value_template: '{{ value_json.address }}'
+scan_interval: 1800
+json_attributes:
+  - services
