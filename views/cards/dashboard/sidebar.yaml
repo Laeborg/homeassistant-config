@@ -66,8 +66,6 @@ card:
         <ha-icon icon="mdi:delete-empty"></ha-icon>
       </div>
       <div style="width: calc(100% - 60px); float: left; padding-top: 5px;">
-        Recycle Bin will be collected in <b>{{ states.sensor.garbage_collection_recycle.state }} days</b>
-      {#
         {% if states.sensor.garbage_collection_recycle.state < 8 %}
           {% if states.sensor.garbage_collection_recycle.state < 1 %}
             Recycle Bin will be collected <b>today</b>
@@ -77,23 +75,10 @@ card:
             Recycle Bin will be collected in <b>{{ states.sensor.garbage_collection_recycle.state }} days</b>
           {% endif %}
         {% elif states.sensor.garbage_collection_biowaste.state < 8 %}
-          {% if states.sensor.garbage_collection_biowaste.state < 1 %}
-            Bio Waste will be collected <b>today</b>
-          {% elif states.sensor.garbage_collection_biowaste.state < 2 %}
-            Bio Waste will be collected <b>tomorrow</b>
-          {% else %}
-            Bio Waste will be collected in <b>{{ states.sensor.garbage_collection_biowaste.state }} days</b>
-          {% endif %}
+          Bio Waste will be collected in <b>{{ states.sensor.garbage_collection_biowaste.state }} days</b>
         {% elif states.sensor.garbage_collection_regular.state < 8 %}
-          {% if states.sensor.garbage_collection_regular.state < 1 %}
-            Regular Waste will be collected <b>today</b>
-          {% elif states.sensor.garbage_collection_regular.state < 2 %}
-            Regular Waste will be collected <b>tomorrow</b>
-          {% else %}
-            Regular Waste will be collected in <b>{{ states.sensor.garbage_collection_regular.state }} days</b>
-          {% endif %}
-        {% endif %}#}
-        
+          Regular Waste will be collected in <b>{{ states.sensor.garbage_collection_regular.state }} days</b>
+        {% endif %}
       </div>
       <div style="display: table; content: ''; clear: both;"></div>
     </div>
