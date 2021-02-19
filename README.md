@@ -40,8 +40,8 @@ Inspired by [frenck](https://github.com/frenck/home-assistant-config) and [matt8
 - Roborock S6
 - 2 Wiz light bulbs (via [wiz_light](https://github.com/sbidy/wiz_light))
 - 2 Ubiquiti UniFi® Protect G3 Bullet
-- Samsung UE43TU7005
-- Samsung UE55TU7005
+- Samsung UE43TU7005 (via [ha-samsungtv-smart](https://github.com/ollo69/ha-samsungtv-smart))
+- Samsung UE55TU7005 (via [ha-samsungtv-smart](https://github.com/ollo69/ha-samsungtv-smart))
 - Playstation 4
 - Lenovo Smart Clock
 - Google Home
