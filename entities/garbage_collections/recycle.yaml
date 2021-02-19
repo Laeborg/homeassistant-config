@@ -1,7 +1,0 @@
-name: "Recycle"
-frequency: "every-n-weeks"
-period: 4
-first_week: 3
-collection_days:
-  - wed
-expire_after: '14:00'
