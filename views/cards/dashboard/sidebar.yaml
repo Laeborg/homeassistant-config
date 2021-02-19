@@ -65,7 +65,7 @@ card:
       <div style="width: 60px; float: left;">
         <ha-icon icon="mdi:delete-empty"></ha-icon>
       </div>
-      <div style="width: calc(100% - 60px); float: left; padding-top: 5px;">
+      <div style="width: calc(100% - 60px); float: left; padding-top: 5px;">{#
         {% if states.sensor.garbage_collection_recycle.state < 8 %}
           {% if states.sensor.garbage_collection_recycle.state < 1 %}
             Recycle Bin will be collected <b>today</b>
@@ -90,7 +90,8 @@ card:
           {% else %}
             Regular Waste will be collected in <b>{{ states.sensor.garbage_collection_regular.state }} days</b>
           {% endif %}
-        {% endif %}
+        {% endif %}#}
+        
       </div>
       <div style="display: table; content: ''; clear: both;"></div>
     </div>
