@@ -2,7 +2,7 @@ platform: template
 sensors:
   garbage_collection_regular:
     friendly_name: Garbage Collection - Regular Waste
-    value_template: '{{ (as_timestamp(states.sensor.garbage_collection.attributes["services"]["dagrenovation_0"]["next"]["date"]) - as_timestamp(now().strftime("%Y-%m-%d"))) / (60 * 60 * 24) }}'
+    value_template: '{{ ((as_timestamp(states.sensor.garbage_collection.attributes["services"]["dagrenovation_0"]["next"]["date"]) - as_timestamp(now().strftime("%Y-%m-%d"))) / (60 * 60 * 24))|int }}'
     attribute_templates:
       date: '{{ states.sensor.garbage_collection.attributes["services"]["dagrenovation_0"]["next"]["date"] }}'
       schedule: '{{ states.sensor.garbage_collection.attributes["services"]["dagrenovation_0"]["schedule"] }}'
@@ -11,7 +11,7 @@ sensors:
       
   garbage_collection_biowaste:
     friendly_name: Garbage Collection - Biowaste
-    value_template: '{{ (as_timestamp(states.sensor.garbage_collection.attributes["services"]["dagrenovation_1"]["next"]["date"]) - as_timestamp(now().strftime("%Y-%m-%d"))) / (60 * 60 * 24) }}'
+    value_template: '{{ ((as_timestamp(states.sensor.garbage_collection.attributes["services"]["dagrenovation_1"]["next"]["date"]) - as_timestamp(now().strftime("%Y-%m-%d"))) / (60 * 60 * 24))|int }}'
     attribute_templates:
       date: '{{ states.sensor.garbage_collection.attributes["services"]["dagrenovation_1"]["next"]["date"] }}'
       schedule: '{{ states.sensor.garbage_collection.attributes["services"]["dagrenovation_1"]["schedule"] }}'
@@ -20,7 +20,7 @@ sensors:
       
   garbage_collection_recycle:
     friendly_name: Garbage Collection - Recycle
-    value_template: '{{ (as_timestamp(states.sensor.garbage_collection.attributes["services"]["genbrug_0"]["next"]["date"]) - as_timestamp(now().strftime("%Y-%m-%d"))) / (60 * 60 * 24) }}'
+    value_template: '{{ ((as_timestamp(states.sensor.garbage_collection.attributes["services"]["genbrug_0"]["next"]["date"]) - as_timestamp(now().strftime("%Y-%m-%d"))) / (60 * 60 * 24))|int }}'
     attribute_templates:
       date: '{{ states.sensor.garbage_collection.attributes["services"]["genbrug_0"]["next"]["date"] }}'
       schedule: '{{ states.sensor.garbage_collection.attributes["services"]["genbrug_0"]["schedule"] }}'
