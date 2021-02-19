@@ -2,8 +2,6 @@
 
 [Home Assistant OS (HassOS)](https://github.com/home-assistant/operating-system) as a virtual machine on a VMWare ESXi host. The VM is currently allocated 2 CPU cores, 2 GB of RAM and 32 GB disk space. Local DNS ensures same hostname both internal and external. Network is powered by Ubiquiti.
 
-🛠️ **This setup is work-in-progress** 🛠️
-
 Inspired by [frenck](https://github.com/frenck/home-assistant-config) and [matt8707](https://github.com/matt8707/hass-config) - check out their awesome configurations too.
 
 ![Dashboard](/Screenshots/Dashboard.png)
@@ -13,7 +11,7 @@ Inspired by [frenck](https://github.com/frenck/home-assistant-config) and [matt8
 - Bluetooth: Logilink BC8510
 
 ## Devices
-**Zigbee**
+**Zigbee** (via [zigbee2mqtt.io](https://github.com/Koenkk/zigbee2mqtt.io))
 - 11 SmartThings Multipurpose Sensor (IM6001-MPP01)
 - 5 SmartThings Motion Detector (IM6001-MTP01)
 - 2 Xiaomi MiJia light intensity sensor (GZCGQ01LM)
