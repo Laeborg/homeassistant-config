@@ -38,7 +38,7 @@
 
   trigger:
     - platform: webhook
-      webhook_id: 41fb1644ecd4efacf008d327eae72cd2 # md5: homemonitoring/abort_disarm
+      webhook_id: !secret webhook_disarm_id
       
   condition:
     - condition: state

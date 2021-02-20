@@ -60,5 +60,5 @@
         title: Warning - Intruder Alert
         data:
           priority: 1
-          url: https://lbrg.duckdns.org:8123/local/webhooks/41fb1644ecd4efacf008d327eae72cd2.html
+          url: !secret webhook_disarm_url
           url_title: Abort & disarm
