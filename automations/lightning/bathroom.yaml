@@ -1,4 +1,4 @@
-# Turn on Bathroom Light when motion (disarmed)
+# Turn on Bathroom Lights when motion (disarmed)
 - alias: '[LIGHTNING] Bathroom Lights - Turn on when motion (disarmed)'
 
   trigger:
@@ -12,6 +12,10 @@
       state: 'off'
       
     - condition: state
+      entity_id: light.bathroom_mirror_lights
+      state: 'off'
+      
+    - condition: state
       entity_id: alarm_control_panel.home_monitoring
       state: 'disarmed'
       
@@ -21,30 +25,52 @@
       
     - service: light.turn_on
       entity_id: light.bathroom_mirror_lights
-      
-    - wait_for_trigger:
-      - platform: state
-        entity_id: binary_sensor.hallway_motion_sensor_occupancy
-        to: 'off'
-        for:
-          seconds: 300
-          
-      - platform: numeric_state
-        entity_id: sensor.bathroom_temperature_humidity_sensor_humidity
-        below: 75
+    
+# Turn off Bathroom Lights when no motion and low humidity (disarmed)
+- alias: '[LIGHTNING] Bathroom Lights - Turn off when no motion and low humidity (disarmed)'
+
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.hallway_motion_sensor_occupancy
+      to: 'off'
+      for:
+        seconds: 300
         
-      timeout:
-        minutes: 60
-        
-      continue_on_timeout: true
+    - platform: numeric_state
+      entity_id: sensor.bathroom_temperature_humidity_sensor_humidity
+      below: 75
       
+  condition:
+    - condition: state
+      entity_id: alarm_control_panel.home_monitoring
+      state: 'disarmed'
+      
+    - condition: state
+      entity_id: light.bathroom_light
+      state: 'on'
+      
+    - condition: state
+      entity_id: light.bathroom_mirror_lights
+      state: 'on'
+      
+    - condition: numeric_state
+      entity_id: sensor.bathroom_temperature_humidity_sensor_humidity
+      below: 75
+      
+    - condition: state
+      entity_id: binary_sensor.hallway_motion_sensor_occupancy
+      state: 'off'
+      for:
+        seconds: 300
+        
+  action:
     - service: light.turn_off
       entity_id: light.bathroom_light
       
     - service: light.turn_off
       entity_id: light.bathroom_mirror_lights
       
-# Turn of Bathroom Mirror Light when motion (night)
+# Turn on Bathroom Mirror Light when motion (night)
 - alias: '[LIGHTNING] Bathroom Lights - Turn on when motion (night)'
 
   trigger:
@@ -74,22 +100,43 @@
   action:
     - service: light.turn_on
       entity_id: light.bathroom_mirror_lights
+    
+# Turn off Bathroom Lights when no motion and low humidity (disarmed)
+- alias: '[LIGHTNING] Bathroom Lights - Turn off when no motion and low humidity (night)'
+
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.hallway_motion_sensor_occupancy
+      to: 'off'
+      for:
+        seconds: 300
+        
+    - platform: numeric_state
+      entity_id: sensor.bathroom_temperature_humidity_sensor_humidity
+      below: 75
       
-    - wait_for_trigger:
-      - platform: state
-        entity_id: binary_sensor.hallway_motion_sensor_occupancy
-        to: 'off'
-        for:
-          seconds: 120
-          
-      - platform: numeric_state
-        entity_id: sensor.bathroom_temperature_humidity_sensor_humidity
-        below: 75
+  condition:
+    - condition: state
+      entity_id: alarm_control_panel.home_monitoring
+      state: 'armed_night'
+      
+    - condition: state
+      entity_id: light.bathroom_mirror_lights
+      state: 'on'
+      
+    - condition: numeric_state
+      entity_id: sensor.bathroom_temperature_humidity_sensor_humidity
+      below: 75
+      
+    - condition: state
+      entity_id: binary_sensor.hallway_motion_sensor_occupancy
+      state: 'off'
+      for:
+        seconds: 120
         
-      timeout:
-        minutes: 60
-        
-      continue_on_timeout: true
+  action:
+    - service: light.turn_off
+      entity_id: light.bathroom_light
       
     - service: light.turn_off
       entity_id: light.bathroom_mirror_lights
