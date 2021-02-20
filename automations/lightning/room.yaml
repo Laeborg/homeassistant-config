@@ -1,0 +1,35 @@
+# Toggle light based on Hallway sensors and lights
+- alias: '[LIGHTNING] Room Lights - Toggle light based on Hallway sensor and sun'
+
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.hallway_motion_sensor_2_occupancy
+      to: 'on'
+      
+  condition:
+    - condition: state
+      entity_id: switch.room_smart_plug
+      state: 'off'
+      
+    - condition: state
+      entity-id: sun.sun
+      state: 'below_horizon'
+      
+  action:
+    - service: switch.turn_on
+      entity_id: switch.room_smart_plug
+      
+    - wait_for_trigger:
+      - platform: state
+        entity_id: binary_sensor.hallway_motion_sensor_2_occupancy
+        to: 'off'
+        for:
+          seconds: 120
+          
+      timeout:
+        minutes: 30
+          
+      continue_on_timeout: true
+      
+    - service: switch.turn_off
+      entity_id: switch.room_smart_plug
