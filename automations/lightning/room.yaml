@@ -12,7 +12,7 @@
       state: 'off'
       
     - condition: state
-      entity-id: sun.sun
+      entity_id: sun.sun
       state: 'below_horizon'
       
   action:
