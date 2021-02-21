@@ -1,5 +1,5 @@
 # Turn off Hallway and Bathroom light when night and bedroom lights turns off
-- alias: '[LIGHTNING] Bedroom Bed Light - Turn off hallway and bathroom'
+- alias: '[LIGHTNING] Bedroom Bed Light - Turn off hallway, bathroom and room'
 
   trigger:
     - platform: state
@@ -29,6 +29,9 @@
       
     - service: light.turn_off
       entity_id: light.bathroom_light
+      
+    - service: switch.turn_off
+      entity_id: switch.room_smart_plug
       
 # Turn off Bedroom Lights based on Location Mode and Motion
 - alias: '[LIGHTNING] Bedroom Light - Turn on based on motion (night)'
