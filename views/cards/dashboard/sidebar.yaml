@@ -110,7 +110,7 @@ card:
         <ha-icon icon="mdi:lightning-bolt"></ha-icon>
       </div>
       <div style="width: calc(100% - 60px); float: left; padding-top: 5px;">
-        Daily energy consumption is <b>{{ states.ensor.eloverblik_energy_total.state }} kWh</b>
+        Daily consumption is <b>{{ states.sensor.eloverblik_energy_total.state }} kWh</b>
       </div>
     </div>
       
