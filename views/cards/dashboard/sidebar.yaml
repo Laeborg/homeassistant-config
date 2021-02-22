@@ -104,6 +104,15 @@ card:
       </div>
       <div style="display: table; content: ''; clear: both;"></div>
     </div>
+    
+    <div style="margin-top: 30px; font-size: 18px; text-align: left; width: 100%; opacity: .4; margin-left: -7px;">
+      <div style="width: 60px; float: left;">
+        <ha-icon icon="mdi:lightning-bolt"></ha-icon>
+      </div>
+      <div style="width: calc(100% - 60px); float: left; padding-top: 5px;">
+        Daily energy consumption is <b>{{ sensor.eloverblik_energy_total }} kWh</b>
+      </div>
+    </div>
       
     <div style="position: absolute; bottom: 20px; left: 0px; width: 100%; text-align: center; opacity: .1;">
       <a href="/profile" style="color: #FFF; text-decoration: none; font-size: 50px;"><ha-icon icon="mdi:account"></ha-icon></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
