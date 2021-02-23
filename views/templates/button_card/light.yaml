@@ -12,11 +12,9 @@ custom_fields:
     }
     ]]]
 tap_action:
-  action: call-service
-  service: browser_mod.popup
-  service_data:
+  action: fire-dom-event
+  browser_mod:
     title: '[[[ return entity.attributes.friendly_name ]]]'
-    deviceID: this
     card:
       type: custom:light-entity-card
       entity: '[[[ return entity.entity_id ]]]'
