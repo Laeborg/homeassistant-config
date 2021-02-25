@@ -1,10 +1,10 @@
-# Active Mailbox Notification if strength is above 15
+# Active Mailbox Notification if vibration is detected
 - alias: '[MAILBOX] Active Notification'
   
   trigger:
-    - platform: numeric_state
+    - platform: state
       entity_id: sensor.mailbox_sensor_strength
-      above: 15
+      state: 'vibrate'
       
   condition:
     - condition: state
