@@ -42,7 +42,7 @@ Inspired by [frenck](https://github.com/frenck/home-assistant-config) and [matt8
 - 2 Ubiquiti UniFi® Protect G3 Bullet (via [unifiprotect](https://github.com/briis/unifiprotect))
 - Samsung UE43TU7005 (via [ha-samsungtv-smart](https://github.com/ollo69/ha-samsungtv-smart))
 - Samsung UE55TU7005 (via [ha-samsungtv-smart](https://github.com/ollo69/ha-samsungtv-smart))
-- Playstation 4
+- Playstation 4 (via [ha-core-ps4](https://github.com/home-assistant/core/tree/dev/homeassistant/components/ps4))
 - Lenovo Smart Clock
 - Google Home
 - Google Nest Mini
