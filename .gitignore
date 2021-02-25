@@ -12,3 +12,6 @@ service_account.json
 
 # Ignore Development Files
 custom_components/linak_dpg
+
+# Ignore Sounds
+www/sounds/
