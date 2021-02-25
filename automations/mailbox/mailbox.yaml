@@ -3,7 +3,7 @@
   
   trigger:
     - platform: state
-      entity_id: sensor.mailbox_sensor_strength
+      entity_id: sensor.mailbox_sensor_action
       state: 'vibrate'
       
   condition:
