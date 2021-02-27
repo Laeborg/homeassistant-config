@@ -4,4 +4,8 @@ google_assistant:
   report_state: true
   exposed_domains:
     - script
-    - light
+  entity_config:
+    - light.bedstand_lights
+    - light.coffee_table_lights
+    - light.dining_room_light
+    - light.office_light
