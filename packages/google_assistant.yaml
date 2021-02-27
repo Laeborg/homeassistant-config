@@ -5,7 +5,7 @@ google_assistant:
   exposed_domains:
     - script
   entity_config:
-    - light.bedstand_lights
-    - light.coffee_table_lights
-    - light.dining_room_light
-    - light.office_light
+    light.bedstand_lights:
+    light.coffee_table_lights:
+    light.dining_room_light:
+    light.office_light:
