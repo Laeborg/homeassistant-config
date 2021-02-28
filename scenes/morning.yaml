@@ -1,0 +1,15 @@
+name: Morning
+icon: mdi:weather-sunset-up
+entities:
+  light.bathroom_light:
+    state: 'on'
+  light.bathroom_mirror_lights:
+    state: 'on'
+  light.dining_room_light:
+    state: 'on'
+  light.coffee_table_lights:
+    state: 'on'
+  light.bedroom_led_strips:
+    state: 'off'
+  light.bedstand_lights:
+    state: 'on'
