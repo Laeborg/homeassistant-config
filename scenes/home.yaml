@@ -1,0 +1,8 @@
+name: Home
+icon: mdi:home
+entities:
+  # Turn on
+  light.dining_room_light:
+    state: 'on'
+  light.coffee_table_lights:
+    state: 'on'

@@ -1,0 +1,32 @@
+name: Away
+icon: mdi:car
+entities:
+  # Turn on
+  
+  # Turn off
+  light.bathroom_light:
+    state: 'off'
+  light.bathroom_mirror_lights:
+    state: 'off'
+  light.hallway_light:
+    state: 'off'
+  light.bedstand_lights:
+    state: 'off'
+  light.dining_room_light:
+    state: 'off'
+  light.coffee_table_lights:
+    state: 'off'
+  light.bedroom_led_strips:
+    state: 'off'
+  light.office_light:
+    state: 'off'
+  light.laundry_room_light:
+    state: 'off'
+  light.entrance_light:
+    state: 'off'
+  switch.room_smart_plug:
+    state: 'off'
+  light.toilet_light:
+    state: 'off'
+  light.living_room_tv_spots:
+    state: 'off'

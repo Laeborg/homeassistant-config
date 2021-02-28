@@ -1,0 +1,30 @@
+name: Night
+icon: mdi:weather-night
+entities:
+  # Turn on
+  light.bathroom_light:
+    state: 'on'
+  light.bathroom_mirror_lights:
+    state: 'on'
+  light.hallway_light:
+    state: 'on'
+  light.bedstand_lights:
+    state: 'on'
+    
+  # Turn off
+  light.dining_room_light:
+    state: 'off'
+  light.coffee_table_lights:
+    state: 'off'
+  light.bedroom_led_strips:
+    state: 'off'
+  light.office_light:
+    state: 'off'
+  light.laundry_room_light:
+    state: 'off'
+  light.entrance_light:
+    state: 'off'
+  switch.room_smart_plug:
+    state: 'off'
+  light.toilet_light:
+    state: 'off'

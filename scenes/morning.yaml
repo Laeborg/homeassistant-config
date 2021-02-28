@@ -1,6 +1,7 @@
 name: Morning
 icon: mdi:weather-sunset-up
 entities:
+  # Turn on
   light.bathroom_light:
     state: 'on'
   light.bathroom_mirror_lights:
@@ -9,7 +10,11 @@ entities:
     state: 'on'
   light.coffee_table_lights:
     state: 'on'
-  light.bedroom_led_strips:
-    state: 'off'
   light.bedstand_lights:
     state: 'on'
+  light.hallway_light:
+    state: 'on'
+    
+  # Turn off
+  light.bedroom_led_strips:
+    state: 'off'
