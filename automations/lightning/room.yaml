@@ -19,6 +19,10 @@
       entity_id: alarm_control_panel.home_monitoring
       state: 'disarmed'
       
+    - condition: time
+      after: "18:00:00"
+      before: "05:00:00"
+      
   action:
     - service: switch.turn_on
       entity_id: switch.room_smart_plug
