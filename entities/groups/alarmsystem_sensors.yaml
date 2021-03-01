@@ -1,0 +1,15 @@
+alarmsystem_sensors:
+  name: Alarm System Sensors (all)
+  entities:
+    - binary_sensor.bedroom_multipurpose_sensor_contact
+    - binary_sensor.dining_room_multipurpose_sensor_contact
+    - binary_sensor.hamster_room_multipurpose_sensor_contact
+    - binary_sensor.living_room_multipurpose_sensor_1_contact
+    - binary_sensor.living_room_multipurpose_sensor_2_contact
+    - binary_sensor.office_multipurpose_sensor_contact
+    - binary_sensor.room_multipurpose_sensor_contact
+    - binary_sensor.server_room_multipurpose_sensor_contact
+    - binary_sensor.terrace_multipurpose_sensor_1_contact
+    - binary_sensor.terrace_multipurpose_sensor_2_contact
+    - binary_sensor.terrace_door_contact_sensor_contact
+    - binary_sensor.bathroom_multipurpose_sensor_contact

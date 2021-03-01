@@ -1,0 +1,14 @@
+alarmsystem_lights:
+  name: Alarm System Lights
+  entities:
+    - light.bathroom_light
+    - light.bathroom_mirror_lights
+    - light.coffee_table_lights
+    - light.dining_room_light
+    - light.entrance_light
+    - light.hallway_light
+    - light.laundry_room_light
+    - light.office_light
+    - light.bedstand_lights
+    - light.bedroom_led_strips
+    - switch.room_smart_plug
