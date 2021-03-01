@@ -1,5 +1,5 @@
-alarmsystem_sensors_night:
-  name: Alarm System Sensors (night)
+alarmsystem_sensors_home:
+  name: Alarm System Sensors (home)
   entities:
     - binary_sensor.bedroom_multipurpose_sensor_contact
     - binary_sensor.dining_room_multipurpose_sensor_contact

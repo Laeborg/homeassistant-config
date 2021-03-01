@@ -1,14 +1,57 @@
-# Trigger alarm when sensor is triggered and alarm is armed
-- alias: '[SECURITY] Home Monitoring - Trigger when armed'
+# Trigger alarm when sensor is triggered and alarm is armed (home/night)
+- alias: '[SECURITY] Home Monitoring - Trigger when armed (home/night)'
   
   trigger:
     - platform: state
-      entity_id: group.alarmsystem_sensors
+      entity_id: group.alarmsystem_sensors_home
       to: 'on'
       
   condition:
-    - condition: template
-      value_template: "{{ not is_state('alarm_control_panel.home_monitoring', 'disarmed') }}"
+    - condition: or
+      conditions:
+        - condition: state
+          entity_id: alarm_control_panel.home_monitoring
+          state: 'armed_home'
+        
+        - condition: state
+          entity_id: alarm_control_panel.home_monitoring
+          state: 'armed_night'
+  
+  action:
+    - service: alarm_control_panel.alarm_trigger
+      entity_id: alarm_control_panel.home_monitoring
+        
+    - service: light.turn_on
+      entity_id: group.alarmsystem_lights
+      
+    - service: media_player.volume_set
+      data:
+        entity_id: group.notification_speakers
+        volume_level: 1
+        
+    - repeat:
+        while: "{{ is_state('alarm_control_panel.home_monitoring', 'triggered') and repeat.index < 15 }}"
+        sequence:
+          - service: media_player.play_media
+            data:
+              entity_id: group.notification_speakers
+              media_content_id: /local/sounds/intruder.mp3
+              media_content_type: music
+          - delay:
+              seconds: 15
+              
+# Trigger alarm when sensor is triggered and alarm is armed (away)
+- alias: '[SECURITY] Home Monitoring - Trigger when armed (away)'
+  
+  trigger:
+    - platform: state
+      entity_id: group.alarmsystem_sensors_away
+      to: 'on'
+      
+  condition:
+    - condition: state
+      entity_id: alarm_control_panel.home_monitoring
+      state: 'armed_away'
   
   action:
     - service: alarm_control_panel.alarm_trigger
