@@ -3,9 +3,7 @@ id: '1611166279170'
 icon: mdi:weather-sunset-up
 entities:
   # Turn on
-  light.bathroom_light:
-    state: 'on'
-  light.bathroom_mirror_lights:
+  light.bathroom_lights:
     state: 'on'
   light.dining_room_light:
     state: 'on'

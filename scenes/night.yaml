@@ -3,9 +3,7 @@ id: '1611166156736'
 icon: mdi:weather-night
 entities:
   # Turn on
-  light.bathroom_light:
-    state: 'on'
-  light.bathroom_mirror_lights:
+  light.bathroom_lights:
     state: 'on'
   light.hallway_light:
     state: 'on'
