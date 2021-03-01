@@ -1,4 +1,5 @@
 name: Morning
+id: '1611166279170'
 icon: mdi:weather-sunset-up
 entities:
   # Turn on

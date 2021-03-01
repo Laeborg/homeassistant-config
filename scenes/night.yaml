@@ -1,4 +1,5 @@
 name: Night
+id: '1611166156736'
 icon: mdi:weather-night
 entities:
   # Turn on
