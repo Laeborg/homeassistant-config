@@ -8,16 +8,18 @@
   
   condition:
     - condition: state
-      entity_id: light.bathroom_light
-      state: 'off'
-      
-    - condition: state
-      entity_id: light.bathroom_mirror_lights
-      state: 'off'
-      
-    - condition: state
       entity_id: alarm_control_panel.home_monitoring
       state: 'disarmed'
+      
+    - condition: or
+      conditions:
+      - condition: state
+        entity_id: light.bathroom_light
+        state: 'off'
+        
+      - condition: state
+        entity_id: light.bathroom_mirror_lights
+        state: 'off'
       
   action:
     - service: light.turn_on
@@ -45,14 +47,6 @@
       entity_id: alarm_control_panel.home_monitoring
       state: 'disarmed'
       
-    - condition: state
-      entity_id: light.bathroom_light
-      state: 'on'
-      
-    - condition: state
-      entity_id: light.bathroom_mirror_lights
-      state: 'on'
-      
     - condition: numeric_state
       entity_id: sensor.bathroom_temperature_humidity_sensor_humidity
       below: 75
@@ -62,6 +56,16 @@
       state: 'off'
       for:
         seconds: 300
+        
+    - condition: or
+      conditions:
+      - condition: state
+        entity_id: light.bathroom_light
+        state: 'on'
+        
+      - condition: state
+        entity_id: light.bathroom_mirror_lights
+        state: 'on'
         
   action:
     - service: light.turn_off
@@ -80,12 +84,12 @@
   
   condition:
     - condition: state
-      entity_id: light.bathroom_mirror_lights
-      state: 'off'
-      
-    - condition: state
       entity_id: alarm_control_panel.home_monitoring
       state: 'armed_night'
+      
+    - condition: state
+      entity_id: light.bathroom_mirror_lights
+      state: 'off'
       
     - condition: or
       conditions:
