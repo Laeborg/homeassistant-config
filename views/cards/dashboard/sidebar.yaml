@@ -14,7 +14,7 @@ card_mod:
       background: rgba(0, 0, 0, .2);
       border-right: 1px solid #1b1b1b;
       box-shadow: none;
-      min-height: calc(100vh - 5px);
+      min-height: calc(100vh - 20px);
       position: relative;
       color: #cdcdcd;
       --mdc-icon-size: 50px;
