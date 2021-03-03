@@ -1,4 +1,4 @@
-type: grid
+type: custom:mod-card
 class: "hidden-xs hidden-sm col-md-3"
 card_mod:
   style: |

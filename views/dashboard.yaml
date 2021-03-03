@@ -14,7 +14,7 @@ cards:
         # Content
         - type: row
           cards:
-            - type: grid
+            - type: custom:mod-card
               class: "col-xs-12 col-md-9"
               cards:
                 - !include cards/dashboard/livingroom.yaml
