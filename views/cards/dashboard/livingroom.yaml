@@ -1,28 +1,31 @@
 type: custom:mod-card
-style: |
-  ha-card {
-    padding: 0px 30px 35px;
-    margin-top: -15px;
-  }
-  .card-header {
-    font-size: 26px;
-    font-weight: bold;
-    margin-left: -15px;
-    color: #cdcdcd;
-  }
+card_mod:
+  style: |
+    ha-card {
+      padding: 0px 30px 35px;
+      margin-top: -15px;
+    }
+    .card-header {
+      font-size: 26px;
+      font-weight: bold;
+      margin-left: -15px;
+      color: #cdcdcd;
+    }
+    
 card:
   type: vertical-stack
   cards:
     - type: markdown
       content: Living Room
-      style: |
-        ha-card {
-          background: transparent;
-          box-shadow: none;
-          margin: 15px -15px -10px;
-          font-size: 26px;
-          font-weight: bold;
-        }
+      card_mod:
+        style: |
+          ha-card {
+            background: transparent;
+            box-shadow: none;
+            margin: 15px -15px -10px;
+            font-size: 26px;
+            font-weight: bold;
+          }
     
     - type: grid
       columns: 2
