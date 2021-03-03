@@ -3,7 +3,7 @@ class: "col-xs-12 col-sm-2 col-md-4"
 card_mod:
   style: |
     ha-card {
-      padding: 0px 30px 15px;
+      padding: 0px 30px 35px;
       margin-top: -15px;
     }
     .card-header {
@@ -23,7 +23,7 @@ card:
           ha-card {
             background: transparent;
             box-shadow: none;
-            margin: 15px -15px -10px;
+            margin: 0px -15px -10px;
             font-size: 26px;
             font-weight: bold;
           }
