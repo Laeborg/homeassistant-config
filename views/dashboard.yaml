@@ -14,8 +14,8 @@ cards:
         # Content
         - type: row
           cards:
-            - type: "col-xs-12 col-md-9"
-              gridarea: content
+            - type: grid
+              class: "col-xs-12 col-md-9"
               cards:
                 - !include cards/dashboard/livingroom.yaml
                 - !include cards/dashboard/office.yaml
