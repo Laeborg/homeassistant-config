@@ -5,30 +5,21 @@ background: center / cover no-repeat fixed url('/local/images/dashboard.jpg')
 cards:
     
   # General
-    - type: custom:layout-card-griddier
-      layout: grid
-      gridcols: 22% 70%
-      gridrows: auto auto
-      gridareas: |
-        'sidebar content'
-      gridcols_medium: 30% 70%
-      gridareas_medium: |
-        'sidebar content'
-      gridcols_small: 0% 100%
-      gridareas_small: |
-        'sidebar content'
+    - type: row
       cards:
         
         # Sidebar
         - !include cards/dashboard/sidebar.yaml
           
         # Content
-        - type: grid
-          gridarea: content
+        - type: row
           cards:
-            - !include cards/dashboard/livingroom.yaml
-            - !include cards/dashboard/office.yaml
-            - !include cards/dashboard/bedroom.yaml
-            - !include cards/dashboard/laundry_room.yaml
-            - !include cards/dashboard/lightning.yaml
-            - !include cards/dashboard/home.yaml
+            - type: "col-xs-12 col-md-9"
+              gridarea: content
+              cards:
+                - !include cards/dashboard/livingroom.yaml
+                - !include cards/dashboard/office.yaml
+                - !include cards/dashboard/bedroom.yaml
+                - !include cards/dashboard/laundry_room.yaml
+                - !include cards/dashboard/lightning.yaml
+                - !include cards/dashboard/home.yaml

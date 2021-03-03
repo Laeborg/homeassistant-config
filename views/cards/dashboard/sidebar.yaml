@@ -1,5 +1,5 @@
-type: custom:mod-card
-gridarea: sidebar
+type: type
+class: "hidden-xs hidden-sm col-md-3"
 style: |
   html-template-card {
     height: calc(100vh - 12px);
@@ -21,101 +21,101 @@ style: |
     padding-left: 40px !important;
     padding-right: 40px !important;
   }
-card:
-  type: custom:html-template-card
-  ignore_line_breaks: true
-  content: >
-    {%- macro suffix(d) %}
-    {%- set sfx = {1:'st',2:'nd',3:'rd'} %}
-    {{- 'th' if 11 <= d <= 13 else sfx.get(d%10, 'th') }}
-    {%- endmacro %}
-      
-    <h1 style="font-size: 80px; font-weight: normal; text-align: left; margin-top: 40px;">{{ now().strftime('%H:%M') }}</h1>
-      
-    <h2 style="font-size: 24px; font-weight: normal; text-align: left; margin-top: -10px; margin-bottom: 60px; opacity: .4; padding-left: 5px;">{{ now().day }}{{ suffix(now().day) }} {{ now().strftime('%B %Y') }}</h3>
-    
-    <div style="display: none; margin-top: 30px; font-size: 18px; text-align: left; width: 100%; opacity: .4; margin-left: -7px;">
-      <div style="width: 60px; float: left;">
-        {% if is_state('alarm_control_panel.home_monitoring', 'disarmed') %}
-          <ha-icon icon="mdi:lock-open"></ha-icon>
-        {% elif is_state('alarm_control_panel.home_monitoring', 'triggered') %}
-          <ha-icon icon="mdi:lock-alert"></ha-icon>
-        {% else %}
-          <ha-icon icon="mdi:lock-open"></ha-icon>
-        {% endif %}
-      </div>
-      <div style="width: calc(100% - 60px); float: left; padding-top: 5px;">
-        Home Monitoring is
-        {% if is_state('alarm_control_panel.home_monitoring', 'disarmed') %}
-          <b>disarmed</b>
-        {% elif is_state('alarm_control_panel.home_monitoring', 'armed_night') %}
-          <b>armed (night)</b>
-        {% elif is_state('alarm_control_panel.home_monitoring', 'armed_away') %}
-          <b>armed (away)</b>
-        {% elif is_state('alarm_control_panel.home_monitoring', 'armed_home') %}
-          <b>armed (home)</b>
-        {% elif is_state('alarm_control_panel.home_monitoring', 'triggered') %}
-          <b>triggered</b>
-        {% endif %}
-      </div>
-      <div style="display: table; content: ''; clear: both;"></div>
-    </div>
+cards:
+  - type: custom:html-template-card
+    ignore_line_breaks: true
+    content: >
+      {%- macro suffix(d) %}
+      {%- set sfx = {1:'st',2:'nd',3:'rd'} %}
+      {{- 'th' if 11 <= d <= 13 else sfx.get(d%10, 'th') }}
+      {%- endmacro %}
         
-    <div style="margin-top: 30px; font-size: 18px; text-align: left; width: 100%; opacity: .4; margin-left: -7px;">
-      <div style="width: 60px; float: left;">
-        <ha-icon icon="mdi:delete-empty"></ha-icon>
-      </div>
-      <div style="width: calc(100% - 60px); float: left; padding-top: 5px;">
-        {% if states.sensor.garbage_collection_recycle.state|int < 8 %}
-          {% if states.sensor.garbage_collection_recycle.state|int < 1 %}
-            Recycle Bin will be collected <b>today</b>
-          {% elif states.sensor.garbage_collection_recycle.state|int < 2 %}
-            Recycle Bin will be collected <b>tomorrow</b>
-          {% else %}
-            Recycle Bin will be collected in <b>{{ states.sensor.garbage_collection_recycle.state }} days</b>
-          {% endif %}
-        {% elif states.sensor.garbage_collection_biowaste.state|int < 8 %}
-          {% if states.sensor.garbage_collection_biowaste.state|int < 1 %}
-            Bio Waste will be collected <b>today</b>
-          {% elif states.sensor.garbage_collection_biowaste.state|int < 2 %}
-            Bio Waste will be collected <b>tomorrow</b>
-          {% else %}
-            Bio Waste will be collected in <b>{{ states.sensor.garbage_collection_biowaste.state }} days</b>
-          {% endif %}
-        {% elif states.sensor.garbage_collection_regular.state|int < 8 %}
-          {% if states.sensor.garbage_collection_regular.state|int < 1 %}
-            Regular Waste will be collected <b>today</b>
-          {% elif states.sensor.garbage_collection_regular.state|int < 2 %}
-            Regular Waste will be collected <b>tomorrow</b>
-          {% else %}
-            Regular Waste will be collected in <b>{{ states.sensor.garbage_collection_regular.state }} days</b>
-          {% endif %}
-        {% endif %}
-      </div>
-      <div style="display: table; content: ''; clear: both;"></div>
-    </div>
-
-    <div style="margin-top: 30px; font-size: 18px; text-align: left; width: 100%; opacity: .4; margin-left: -7px;">
-      <div style="width: 60px; float: left;">
-        <ha-icon icon="mdi:thermometer"></ha-icon>
-      </div>
-      <div style="width: calc(100% - 60px); float: left; padding-top: 5px;">
-        Temperature is <b>{{ states.sensor.backyard_temperature_humidity_sensor_temperature.state | round() }}°C</b> with <b>{{ states.sensor.backyard_temperature_humidity_sensor_humidity.state | round() }}%</b> humidity
-      </div>
-      <div style="display: table; content: ''; clear: both;"></div>
-    </div>
-    
-    <div style="margin-top: 30px; font-size: 18px; text-align: left; width: 100%; opacity: .4; margin-left: -7px;">
-      <div style="width: 60px; float: left;">
-        <ha-icon icon="mdi:lightning-bolt"></ha-icon>
-      </div>
-      <div style="width: calc(100% - 60px); float: left; padding-top: 5px;">
-        Daily consumption is <b>{{ states.sensor.eloverblik_energy_total.state }} kWh</b>
-      </div>
-    </div>
+      <h1 style="font-size: 80px; font-weight: normal; text-align: left; margin-top: 40px;">{{ now().strftime('%H:%M') }}</h1>
+        
+      <h2 style="font-size: 24px; font-weight: normal; text-align: left; margin-top: -10px; margin-bottom: 60px; opacity: .4; padding-left: 5px;">{{ now().day }}{{ suffix(now().day) }} {{ now().strftime('%B %Y') }}</h3>
       
-    <div style="position: absolute; bottom: 20px; left: 0px; width: 100%; text-align: center; opacity: .1;">
-      <a href="/profile" style="color: #FFF; text-decoration: none; font-size: 50px;"><ha-icon icon="mdi:account"></ha-icon></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <a href="/hassio" style="color: #FFF; text-decoration: none; font-size: 50px;"><ha-icon icon="mdi:home-assistant"></ha-icon></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <a href="/config" style="color: #FFF; text-decoration: none; font-size: 50px;"><ha-icon icon="mdi:cog"></ha-icon></a>
-    </div>
+      <div style="display: none; margin-top: 30px; font-size: 18px; text-align: left; width: 100%; opacity: .4; margin-left: -7px;">
+        <div style="width: 60px; float: left;">
+          {% if is_state('alarm_control_panel.home_monitoring', 'disarmed') %}
+            <ha-icon icon="mdi:lock-open"></ha-icon>
+          {% elif is_state('alarm_control_panel.home_monitoring', 'triggered') %}
+            <ha-icon icon="mdi:lock-alert"></ha-icon>
+          {% else %}
+            <ha-icon icon="mdi:lock-open"></ha-icon>
+          {% endif %}
+        </div>
+        <div style="width: calc(100% - 60px); float: left; padding-top: 5px;">
+          Home Monitoring is
+          {% if is_state('alarm_control_panel.home_monitoring', 'disarmed') %}
+            <b>disarmed</b>
+          {% elif is_state('alarm_control_panel.home_monitoring', 'armed_night') %}
+            <b>armed (night)</b>
+          {% elif is_state('alarm_control_panel.home_monitoring', 'armed_away') %}
+            <b>armed (away)</b>
+          {% elif is_state('alarm_control_panel.home_monitoring', 'armed_home') %}
+            <b>armed (home)</b>
+          {% elif is_state('alarm_control_panel.home_monitoring', 'triggered') %}
+            <b>triggered</b>
+          {% endif %}
+        </div>
+        <div style="display: table; content: ''; clear: both;"></div>
+      </div>
+          
+      <div style="margin-top: 30px; font-size: 18px; text-align: left; width: 100%; opacity: .4; margin-left: -7px;">
+        <div style="width: 60px; float: left;">
+          <ha-icon icon="mdi:delete-empty"></ha-icon>
+        </div>
+        <div style="width: calc(100% - 60px); float: left; padding-top: 5px;">
+          {% if states.sensor.garbage_collection_recycle.state|int < 8 %}
+            {% if states.sensor.garbage_collection_recycle.state|int < 1 %}
+              Recycle Bin will be collected <b>today</b>
+            {% elif states.sensor.garbage_collection_recycle.state|int < 2 %}
+              Recycle Bin will be collected <b>tomorrow</b>
+            {% else %}
+              Recycle Bin will be collected in <b>{{ states.sensor.garbage_collection_recycle.state }} days</b>
+            {% endif %}
+          {% elif states.sensor.garbage_collection_biowaste.state|int < 8 %}
+            {% if states.sensor.garbage_collection_biowaste.state|int < 1 %}
+              Bio Waste will be collected <b>today</b>
+            {% elif states.sensor.garbage_collection_biowaste.state|int < 2 %}
+              Bio Waste will be collected <b>tomorrow</b>
+            {% else %}
+              Bio Waste will be collected in <b>{{ states.sensor.garbage_collection_biowaste.state }} days</b>
+            {% endif %}
+          {% elif states.sensor.garbage_collection_regular.state|int < 8 %}
+            {% if states.sensor.garbage_collection_regular.state|int < 1 %}
+              Regular Waste will be collected <b>today</b>
+            {% elif states.sensor.garbage_collection_regular.state|int < 2 %}
+              Regular Waste will be collected <b>tomorrow</b>
+            {% else %}
+              Regular Waste will be collected in <b>{{ states.sensor.garbage_collection_regular.state }} days</b>
+            {% endif %}
+          {% endif %}
+        </div>
+        <div style="display: table; content: ''; clear: both;"></div>
+      </div>
+
+      <div style="margin-top: 30px; font-size: 18px; text-align: left; width: 100%; opacity: .4; margin-left: -7px;">
+        <div style="width: 60px; float: left;">
+          <ha-icon icon="mdi:thermometer"></ha-icon>
+        </div>
+        <div style="width: calc(100% - 60px); float: left; padding-top: 5px;">
+          Temperature is <b>{{ states.sensor.backyard_temperature_humidity_sensor_temperature.state | round() }}°C</b> with <b>{{ states.sensor.backyard_temperature_humidity_sensor_humidity.state | round() }}%</b> humidity
+        </div>
+        <div style="display: table; content: ''; clear: both;"></div>
+      </div>
+      
+      <div style="margin-top: 30px; font-size: 18px; text-align: left; width: 100%; opacity: .4; margin-left: -7px;">
+        <div style="width: 60px; float: left;">
+          <ha-icon icon="mdi:lightning-bolt"></ha-icon>
+        </div>
+        <div style="width: calc(100% - 60px); float: left; padding-top: 5px;">
+          Daily consumption is <b>{{ states.sensor.eloverblik_energy_total.state }} kWh</b>
+        </div>
+      </div>
+        
+      <div style="position: absolute; bottom: 20px; left: 0px; width: 100%; text-align: center; opacity: .1;">
+        <a href="/profile" style="color: #FFF; text-decoration: none; font-size: 50px;"><ha-icon icon="mdi:account"></ha-icon></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="/hassio" style="color: #FFF; text-decoration: none; font-size: 50px;"><ha-icon icon="mdi:home-assistant"></ha-icon></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="/config" style="color: #FFF; text-decoration: none; font-size: 50px;"><ha-icon icon="mdi:cog"></ha-icon></a>
+      </div>
