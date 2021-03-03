@@ -1,5 +1,5 @@
 type: custom:mod-card
-class: "hidden-xs hidden-sm col-md-3"
+class: "d-none d-sm-none col-md-3"
 card_mod:
   style: |
     html-template-card {
