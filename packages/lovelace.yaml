@@ -22,3 +22,5 @@ lovelace:
       type: module
     - url: /hacsfiles/light-entity-card/light-entity-card.js
       type: module
+    - url: /hacsfiles/bootstrap-grid-card/bootstrap-grid-card.js
+      type: module
