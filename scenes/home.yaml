@@ -1,5 +1,5 @@
 name: Home
-id: '1611166344948'
+id: 'home'
 icon: mdi:home
 entities:
   # Turn on

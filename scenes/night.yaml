@@ -1,5 +1,5 @@
 name: Night
-id: '1611166156736'
+id: 'night'
 icon: mdi:weather-night
 entities:
   # Turn on

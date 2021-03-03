@@ -1,4 +1,5 @@
 name: Romantic
+id: 'romantic'
 icon: mdi:cards-heart
 entities:
   # Turn off

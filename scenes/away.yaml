@@ -1,5 +1,5 @@
 name: Away
-id: '1611166901832'
+id: 'away'
 icon: mdi:car
 entities:
   # Turn on
