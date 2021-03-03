@@ -16,7 +16,7 @@ cards:
             - type: custom:mod-card
               class: "col-xs-12 col-md-9"
               card:
-                type: vertical-stack
+                type: row
                 cards:
                   - !include cards/dashboard/livingroom.yaml
                   - !include cards/dashboard/office.yaml
