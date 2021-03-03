@@ -15,10 +15,12 @@ cards:
             # Content
             - type: custom:mod-card
               class: "col-xs-12 col-md-9"
-              cards:
-                - !include cards/dashboard/livingroom.yaml
-                - !include cards/dashboard/office.yaml
-                - !include cards/dashboard/bedroom.yaml
-                - !include cards/dashboard/laundry_room.yaml
-                - !include cards/dashboard/lightning.yaml
-                - !include cards/dashboard/home.yaml
+              card:
+                type: vertical-stack
+                cards:
+                  - !include cards/dashboard/livingroom.yaml
+                  - !include cards/dashboard/office.yaml
+                  - !include cards/dashboard/bedroom.yaml
+                  - !include cards/dashboard/laundry_room.yaml
+                  - !include cards/dashboard/lightning.yaml
+                  - !include cards/dashboard/home.yaml

@@ -22,7 +22,7 @@ card_mod:
       padding-left: 40px !important;
       padding-right: 40px !important;
     }
-cards:
+card:
   - type: custom:html-template-card
     ignore_line_breaks: true
     content: >
