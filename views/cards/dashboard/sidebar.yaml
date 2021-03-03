@@ -1,6 +1,6 @@
 type: grid
 class: "hidden-xs hidden-sm col-md-3"
-  card_mod:
+card_mod:
   style: |
     html-template-card {
       height: calc(100vh - 12px);
