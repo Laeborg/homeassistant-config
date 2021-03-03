@@ -5,7 +5,7 @@ background: center / cover no-repeat fixed url('/local/images/dashboard.jpg')
 cards:
     
   # General
-    - type: row
+    - type: custom:bootstrap-grid-card
       cards:
         
         # Sidebar
