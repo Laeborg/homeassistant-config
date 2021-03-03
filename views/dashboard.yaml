@@ -7,13 +7,12 @@ cards:
   # General
     - type: custom:bootstrap-grid-card
       cards:
-        
-        # Sidebar
-        - !include cards/dashboard/sidebar.yaml
-          
-        # Content
         - type: row
           cards:
+            # Sidebar
+            - !include cards/dashboard/sidebar.yaml
+              
+            # Content
             - type: custom:mod-card
               class: "col-xs-12 col-md-9"
               cards:
