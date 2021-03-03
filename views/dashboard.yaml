@@ -16,11 +16,13 @@ cards:
             - type: custom:mod-card
               class: "col-xs-12 col-md-9"
               card:
-                type: row
+                type: custom:bootstrap-grid-card
                 cards:
-                  - !include cards/dashboard/livingroom.yaml
-                  - !include cards/dashboard/office.yaml
-                  - !include cards/dashboard/bedroom.yaml
-                  - !include cards/dashboard/laundry_room.yaml
-                  - !include cards/dashboard/lightning.yaml
-                  - !include cards/dashboard/home.yaml
+                  - type: row
+                    cards:
+                      - !include cards/dashboard/livingroom.yaml
+                      - !include cards/dashboard/office.yaml
+                      - !include cards/dashboard/bedroom.yaml
+                      - !include cards/dashboard/laundry_room.yaml
+                      - !include cards/dashboard/lightning.yaml
+                      - !include cards/dashboard/home.yaml
