@@ -23,7 +23,7 @@ card:
           ha-card {
             background: transparent;
             box-shadow: none;
-            margin: -10px -15px -10px;
+            margin: -5px -15px -10px;
             font-size: 26px;
             font-weight: bold;
           }
