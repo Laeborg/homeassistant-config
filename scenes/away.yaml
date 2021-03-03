@@ -5,6 +5,7 @@ entities:
   # Turn on
   
   # Turn off
+  ## Lights
   light.bathroom_lights:
     state: 'off'
   light.hallway_light:

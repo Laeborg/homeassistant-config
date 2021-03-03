@@ -3,6 +3,21 @@ id: '1611166156736'
 icon: mdi:weather-night
 entities:
   # Turn on
+  ## Circadians
+  switch.circadian_lighting_bathroom:
+    state: 'on'
+  switch.circadian_lighting_bedroom:
+    state: 'on'
+  switch.circadian_lighting_hallway:
+    state: 'on'
+  switch.circadian_lighting_living_room:
+    state: 'on'
+  switch.circadian_lighting_office:
+    state: 'on'
+  switch.circadian_lighting_toilet:
+    state: 'on'
+  
+  ## Lights
   light.bathroom_lights:
     state: 'on'
   light.hallway_light:
@@ -11,6 +26,7 @@ entities:
     state: 'on'
     
   # Turn off
+  ## Lights
   light.dining_room_light:
     state: 'off'
   light.coffee_table_lights:

@@ -1,0 +1,18 @@
+name: Romantic
+icon: mdi:cards-heart
+entities:
+  # Turn off
+  ## Lights
+  light.bedroom_led_strips:
+    state: 'off'
+  
+  ## Circadians
+  switch.circadian_lighting_bedroom:
+    state: 'off'
+    
+  # Turn on
+  ## Lights
+  light.bedstand_lights:
+    state: 'on'
+    brightness: 1
+    color_temp: 454

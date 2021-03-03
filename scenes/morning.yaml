@@ -3,6 +3,21 @@ id: '1611166279170'
 icon: mdi:weather-sunset-up
 entities:
   # Turn on
+  ## Circadians
+  switch.circadian_lighting_bathroom:
+    state: 'on'
+  switch.circadian_lighting_bedroom:
+    state: 'on'
+  switch.circadian_lighting_hallway:
+    state: 'on'
+  switch.circadian_lighting_living_room:
+    state: 'on'
+  switch.circadian_lighting_office:
+    state: 'on'
+  switch.circadian_lighting_toilet:
+    state: 'on'
+  
+  ## Lights
   light.bathroom_lights:
     state: 'on'
   light.dining_room_light:
@@ -15,5 +30,6 @@ entities:
     state: 'on'
     
   # Turn off
+  ## Lights
   light.bedroom_led_strips:
     state: 'off'
