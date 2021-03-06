@@ -12,10 +12,14 @@ custom_fields:
     }
     ]]]
 tap_action:
+#  action: fire-dom-event
+#  browser_mod:
+#    command: popup
+#    title: '[[[ return entity.attributes.friendly_name ]]]'
+#    card:
+#      type: custom:light-entity-card
+#      entity: '[[[ return entity.entity_id ]]]'
   action: fire-dom-event
   browser_mod:
-    command: popup
-    title: '[[[ return entity.attributes.friendly_name ]]]'
-    card:
-      type: custom:light-entity-card
-      entity: '[[[ return entity.entity_id ]]]'
+    command: toast
+    message: Hello, world!
