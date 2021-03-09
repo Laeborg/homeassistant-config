@@ -1,0 +1,7 @@
+alias: Night
+icon: mdi:weather-night
+mode: single
+
+sequence:
+  - service: alarm_control_panel.alarm_arm_night
+    entity_id: alarm_control_panel.home_monitoring
