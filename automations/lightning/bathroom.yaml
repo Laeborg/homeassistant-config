@@ -33,7 +33,7 @@
 
   trigger:
     - platform: state
-      entity_id: binary_sensor.hallway_motion_sensor_occupancy
+      entity_id: binary_sensor.hallway_motion_sensor_1_occupancy
       to: 'off'
       for:
         seconds: 300
@@ -52,7 +52,7 @@
       below: 75
       
     - condition: state
-      entity_id: binary_sensor.hallway_motion_sensor_occupancy
+      entity_id: binary_sensor.hallway_motion_sensor_1_occupancy
       state: 'off'
       for:
         seconds: 300
@@ -110,7 +110,7 @@
 
   trigger:
     - platform: state
-      entity_id: binary_sensor.hallway_motion_sensor_occupancy
+      entity_id: binary_sensor.hallway_motion_sensor_1_occupancy
       to: 'off'
       for:
         seconds: 300
