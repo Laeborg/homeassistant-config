@@ -23,4 +23,4 @@ sequence:
           data:
             entity: '{{ entity }}'
             message: '{{ message }}'
-            volume: 1
+            volume: '{{ volume }}'

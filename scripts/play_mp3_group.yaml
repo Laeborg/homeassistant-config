@@ -23,4 +23,4 @@ sequence:
           data:
             entity: '{{ entity }}'
             file: '{{ file }}'
-            volume: 1
+            volume: '{{ volume }}'
