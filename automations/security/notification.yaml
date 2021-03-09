@@ -42,7 +42,7 @@
           
     - service: script.play_tts
       data:
-        entities: ['media_player.bedroom_clock', 'media_player.office_speaker', 'media_player.living_room_speaker', 'media_player.kitchen_display']
+        entities: '[media_player.bedroom_clock, media_player.office_speaker, media_player.living_room_speaker, media_player.kitchen_display]'
         message: Front Door {{ states.binary_sensor.front_door_contact_sensor_contact.state | replace('off', 'closed') | replace('on', 'opened') }}
         
 # Notify when alarm is triggered
