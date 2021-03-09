@@ -22,5 +22,6 @@ sequence:
   - service: tts.google_translate_say
     data:
       message: '{{ message }}'
-      entity_id: '{{ entity }}'
       cache: true
+    target:
+      entity_id: '{{ entity }}'
