@@ -41,9 +41,10 @@
           state: 'on'
         
     - service: tts.google_translate_say
-      entity_id: group.notification_speakers
       data:
         message: Front Door {{ states.binary_sensor.front_door_contact_sensor_contact.state | replace('off', 'closed') | replace('on', 'opened') }}
+      target:
+        entity_id: group.notification_speakers
         
 # Notify when alarm is triggered
 - alias: '[SECURITY] Notify when triggered'

@@ -19,9 +19,10 @@
       data:
         message: Doorbell at Entrance just got pushed
         title: Doorbell pushed
-            
+        
     - service: media_player.play_media
       data:
-        entity_id: group.notification_speakers
         media_content_id: /local/sounds/doorbell.mp3
         media_content_type: music
+      target:
+        entity_id: group.notification_speakers

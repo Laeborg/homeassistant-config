@@ -26,17 +26,20 @@
       
     - service: media_player.volume_set
       data:
-        entity_id: group.notification_speakers
         volume_level: 1
+      target:
+        entity_id: group.notification_speakers
         
     - repeat:
         while: "{{ is_state('alarm_control_panel.home_monitoring', 'triggered') and repeat.index < 15 }}"
         sequence:
           - service: media_player.play_media
             data:
-              entity_id: group.notification_speakers
               media_content_id: /local/sounds/intruder.mp3
               media_content_type: music
+            target:
+              entity_id: group.notification_speakers
+
           - delay:
               seconds: 15
               
@@ -62,17 +65,20 @@
       
     - service: media_player.volume_set
       data:
-        entity_id: group.notification_speakers
         volume_level: 1
+      target:
+        entity_id: group.notification_speakers
         
     - repeat:
         while: "{{ is_state('alarm_control_panel.home_monitoring', 'triggered') and repeat.index < 15 }}"
         sequence:
           - service: media_player.play_media
             data:
-              entity_id: group.notification_speakers
               media_content_id: /local/sounds/intruder.mp3
               media_content_type: music
+            target:
+              entity_id: group.notification_speakers
+              
           - delay:
               seconds: 15
               
@@ -90,7 +96,8 @@
   
   action:
     - service: media_player.media_stop
-      entity_id: group.notification_speakers
+      target:
+        entity_id: group.notification_speakers
     
     - service: light.turn_off
       entity_id: group.alarmsystem_lights

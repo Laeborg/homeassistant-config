@@ -35,9 +35,10 @@
         title: Washing Machine Finished
             
     - service: tts.google_translate_say
-      entity_id: group.notification_speakers
       data:
         message: Washing Machine is Finish
+      target:
+        entity_id: group.notification_speakers
         
     - service: input_boolean.turn_off
       entity_id: input_boolean.washing_machine

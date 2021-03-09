@@ -45,7 +45,6 @@
           
     - service: media_player.volume_set
       data:
-        entity_id: group.notification_speakers
         volume_level: |
           {% if trigger.to_state.state == 'disarmed' %}
             0.6
@@ -56,3 +55,5 @@
               0.5
             {% endif %}
           {% endif %}
+      target:
+        entity_id: group.notification_speakers
