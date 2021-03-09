@@ -56,6 +56,47 @@
           {% else %}
             1
           {% endif %}
+          
+# Notify and play sound when entrance door changes status
+- alias: '[SECURITY] Notify and play sound when Entrance Door changes status'
+
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.entrance_door_sensor_contact
+      to: 'on'
+      
+    - platform: state
+      entity_id: binary_sensor.entrance_door_sensor_contact
+      to: 'off'
+      
+  action:
+    - service: notify.pushover
+      data:
+        message: Entrance Door changed status to {{ states.binary_sensor.entrance_door_contact_sensor_contact.state | replace('off', 'closed') | replace('on', 'open') }}
+        title: Entrance Door {{ states.binary_sensor.entrance_door_contact_sensor_contact.state | replace('off', 'closed') | replace('on', 'opened') }}
+    
+    - condition: and
+      conditions:
+        - condition: state
+          entity_id: binary_sensor.entrance_door_contact_sensor_contact
+          state: 'on'
+          
+    - service: script.play_tts_group
+      data:
+        entities:
+          - media_player.bedroom_clock
+          - media_player.office_speaker
+          - media_player.living_room_speaker
+          - media_player.kitchen_display
+        message: "Front Door {{ states.binary_sensor.entrance_door_contact_sensor_contact.state | replace('off', 'closed') | replace('on', 'opened') }}"
+        volume: |
+          {% if states.alarm_control_panel.home_monitoring.state == 'disarmed' %}
+            0.6
+          {% elif states.alarm_control_panel.home_monitoring.state == 'armed_night' %}
+            0.5
+          {% else %}
+            1
+          {% endif %}
         
 # Notify when alarm is triggered
 - alias: '[SECURITY] Notify when triggered'
