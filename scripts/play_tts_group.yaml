@@ -1,0 +1,22 @@
+alias: Play TTS on group
+mode: parallel
+
+fields:
+  entities:
+    description: The entities to cast sound to
+    example: '[media_player.bedroom_clock]'
+  message:
+    description: The message to speak
+    example: Hello
+
+sequence:
+  - repeat:
+      count: '{ entities | length }}'
+      sequence:
+        - variables:
+            entity: '{{ entities[repeat.index-1] }}'
+            
+        - service: script.play_tts
+          data:
+            entity: '{{ entity }}'
+            message: '{{ message }}'

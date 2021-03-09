@@ -2,22 +2,16 @@ alias: Play TTS
 mode: parallel
 
 fields:
-  entities:
-    description: The entities to cast sound to
-    example: "[media_player.bedroom_clock]"
+  entity:
+    description: The entity to cast sound to
+    example: 'media_player.bedroom_clock'
   message:
     description: The message to speak
     example: Hello
 
 sequence:
-  - repeat:
-      count: "{{ entities | length }}"
-      sequence:
-        - variables:
-            entity: "{{ entities[repeat.index-1] }}"
-            
-        - service: tts.google_translate_say
-          data:
-            message: '{{ message }}'
-          target:
-            entity_id: '{{ entity }}'
+  - service: tts.google_translate_say
+    data:
+      message: '{{ message }}'
+    target:
+      entity_id: '{{ entity }}'
