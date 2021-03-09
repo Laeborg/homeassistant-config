@@ -8,8 +8,6 @@ fields:
   file:
     description: The file to play
     example: /local/sounds/doorbell.mp3
-    
-mode: parallel
 
 sequence:
   - service: media_player.play_media
