@@ -56,4 +56,49 @@
             {% endif %}
           {% endif %}
       target:
-        entity_id: group.notification_speakers
+        entity_id: media_player.bedroom_clock
+        
+    - service: media_player.volume_set
+      data:
+        volume_level: |
+          {% if trigger.to_state.state == 'disarmed' %}
+            0.6
+          {% else %}
+            {% if trigger.to_state.state == 'armed_away' %}
+              1
+            {% else %}
+              0.5
+            {% endif %}
+          {% endif %}
+      target:
+        entity_id: media_player.office_speaker
+        
+    - service: media_player.volume_set
+      data:
+        volume_level: |
+          {% if trigger.to_state.state == 'disarmed' %}
+            0.6
+          {% else %}
+            {% if trigger.to_state.state == 'armed_away' %}
+              1
+            {% else %}
+              0.5
+            {% endif %}
+          {% endif %}
+      target:
+        entity_id: media_player.living_room_speaker
+        
+    - service: media_player.volume_set
+      data:
+        volume_level: |
+          {% if trigger.to_state.state == 'disarmed' %}
+            0.6
+          {% else %}
+            {% if trigger.to_state.state == 'armed_away' %}
+              1
+            {% else %}
+              0.5
+            {% endif %}
+          {% endif %}
+      target:
+        entity_id: media_player.kitchen_display
