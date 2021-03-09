@@ -1,2 +1,4 @@
 recorder:
   db_url: !secret mariadb_url
+  commit_interval: 30
+  purge_keep_days: 1
