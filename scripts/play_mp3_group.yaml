@@ -16,7 +16,7 @@ sequence:
         - variables:
             entity: '{{ entities[repeat.index-1] }}'
         
-        - service: script.play_tts
+        - service: script.play_mp3
           data:
             entity: '{{ entity }}'
             file: '{{ file }}'
