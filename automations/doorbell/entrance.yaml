@@ -19,31 +19,12 @@
       data:
         message: Doorbell at Entrance just got pushed
         title: Doorbell pushed
-        
-    - service: media_player.play_media
+    
+    - service: script.play_mp3_group
       data:
-        media_content_id: /local/sounds/doorbell.mp3
-        media_content_type: music
-      target:
-        entity_id: media_player.bedroom_clock
-        
-    - service: media_player.play_media
-      data:
-        media_content_id: /local/sounds/doorbell.mp3
-        media_content_type: music
-      target:
-        entity_id: media_player.office_speaker
-        
-    - service: media_player.play_media
-      data:
-        media_content_id: /local/sounds/doorbell.mp3
-        media_content_type: music
-      target:
-        entity_id: media_player.living_room_speaker
-        
-    - service: media_player.play_media
-      data:
-        media_content_id: /local/sounds/doorbell.mp3
-        media_content_type: music
-      target:
-        entity_id: media_player.kitchen_display
+        entities:
+          - media_player.bedroom_clock
+          - media_player.office_speaker
+          - media_player.living_room_speaker
+          - media_player.kitchen_display
+        file: /local/sounds/doorbell.mp3

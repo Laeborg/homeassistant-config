@@ -1,0 +1,20 @@
+alias: Play MP3
+id: 'play_mp3'
+
+fields:
+  entity:
+    description: The entity to cast sound to
+    example: media_player.bedroom_clock
+  file:
+    description: The file to play
+    example: /local/sounds/doorbell.mp3
+    
+mode: parallel
+
+sequence:
+  - service: media_player.play_media
+    data:
+      media_content_id: '{{ file }}'
+      media_content_type: music
+    target:
+      entity_id: '{{ entity }}'

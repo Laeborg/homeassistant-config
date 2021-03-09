@@ -1,0 +1,22 @@
+alias: Play MP3 on group
+mode: parallel
+
+fields:
+  entities:
+    description: The entities to cast sound to
+    example: '[media_player.bedroom_clock]'
+  file:
+    description: The file to play
+    example: /local/sounds/doorbell.mp3
+
+sequence:
+  - repeat:
+      count: '{{ entities | length }}'
+      sequence:
+        - variables:
+            entity: '{{ entities[repeat.index-1] }}'
+        
+        - service: script.play_tts
+          data:
+            entity: '{{ entity }}'
+            file: '{{ file }}'
