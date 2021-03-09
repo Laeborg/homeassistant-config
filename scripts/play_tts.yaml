@@ -4,7 +4,7 @@ mode: parallel
 fields:
   entity:
     description: The entity to cast sound to
-    example: 'media_player.bedroom_clock'
+    example: media_player.bedroom_clock
   message:
     description: The message to speak
     example: Hello
@@ -13,5 +13,5 @@ sequence:
   - service: tts.google_translate_say
     data:
       message: '{{ message }}'
-    target:
       entity_id: '{{ entity }}'
+      cache: true
