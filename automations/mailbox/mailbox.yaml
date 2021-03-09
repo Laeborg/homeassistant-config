@@ -16,12 +16,23 @@
       data:
         message: Mailbox Sensor got just triggered
         title: You have mail
-            
-    - service: media_player.play_media
+        
+    - service: script.play_mp3_group
       data:
-        entity_id: group.notification_speakers
-        media_content_id: /local/sounds/mailbox.wav
-        media_content_type: music
+        entities:
+          - media_player.bedroom_clock
+          - media_player.office_speaker
+          - media_player.living_room_speaker
+          - media_player.kitchen_display
+        file: /local/sounds/mailbox.wav
+        volume: |
+          {% if states.alarm_control_panel.home_monitoring.state == 'disarmed' %}
+            0.6
+          {% elif states.alarm_control_panel.home_monitoring.state == 'armed_night' %}
+            0.5
+          {% else %}
+            1
+          {% endif %}
         
     - service: input_boolean.turn_on
       entity_id: input_boolean.mailbox
