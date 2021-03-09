@@ -8,8 +8,17 @@ fields:
   message:
     description: The message to speak
     example: Hello
+  volume:
+    description: Volume
+    example: 1
 
 sequence:
+  - service: media_player.volume_set
+    data:
+      volume_level: '{{ volume }}'
+    target:
+      entity_id: '{{ entity }}'
+      
   - service: tts.google_translate_say
     data:
       message: '{{ message }}'

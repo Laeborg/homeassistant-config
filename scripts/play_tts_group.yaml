@@ -8,6 +8,9 @@ fields:
   message:
     description: The message to speak
     example: Hello
+  volume:
+    description: Volume
+    example: 1
 
 sequence:
   - repeat:
@@ -20,3 +23,4 @@ sequence:
           data:
             entity: '{{ entity }}'
             message: '{{ message }}'
+            volume: 1

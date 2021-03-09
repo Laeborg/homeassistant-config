@@ -8,6 +8,9 @@ fields:
   file:
     description: The file to play
     example: /local/sounds/doorbell.mp3
+  volume:
+    description: Volume
+    example: 1
 
 sequence:
   - repeat:
@@ -20,3 +23,4 @@ sequence:
           data:
             entity: '{{ entity }}'
             file: '{{ file }}'
+            volume: 1
