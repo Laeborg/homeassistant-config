@@ -1,5 +1,5 @@
 alias: Play MP3
-id: 'play_mp3'
+mode: parallel
 
 fields:
   entity:
