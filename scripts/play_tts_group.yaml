@@ -11,7 +11,7 @@ fields:
 
 sequence:
   - repeat:
-      count: '{ entities | length }}'
+      count: '{{ entities | length }}'
       sequence:
         - variables:
             entity: '{{ entities[repeat.index-1] }}'
