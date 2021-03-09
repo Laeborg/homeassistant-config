@@ -115,11 +115,11 @@
         minutes: 1
     
   action:
-    - service: tts.google_translate_say
+    - service: script.play_tts
       data:
+        entity: media_player.bedroom_clock
         message: Bedroom TV will Turn Off in 5 minutes
-      target:
-        entity_id: media_player.bedroom_clock
+        volume: 0.5
         
 # Sleep Timer - Turn Off
 - alias: '[ELECTRONIC] Sleep Timer for Bedroom TV - Turn Off'
