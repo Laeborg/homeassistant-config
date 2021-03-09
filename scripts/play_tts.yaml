@@ -1,15 +1,16 @@
-alias: Play TTS
-id: 'play_tts'
+play_tts:
+  alias: Play TTS
+  id: 'play_tts'
 
-variables:
-  media_player_entity:
-  message:
-    
-mode: parallel
+  variables:
+    media_player_entity:
+    message:
+      
+  mode: parallel
 
-sequence:
-  - service: tts.google_translate_say
-    data:
-      message: '{{ message }}'
-    target:
-      entity_id: '{{ media_player_entity }}'
+  sequence:
+    - service: tts.google_translate_say
+      data:
+        message: '{{ message }}'
+      target:
+        entity_id: '{{ media_player_entity }}'
