@@ -1,14 +1,13 @@
 alias: Play TTS
+mode: parallel
 
 fields:
   entities:
     description: The entities to cast sound to
-    example: ['media_player.bedroom_clock']
+    example: "[media_player.bedroom_clock]"
   message:
     description: The message to speak
     example: Hello
-    
-mode: parallel
 
 sequence:
   - repeat:
