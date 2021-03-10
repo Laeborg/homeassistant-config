@@ -1,0 +1,22 @@
+alias: Set volume on group
+mode: parallel
+
+fields:
+  entities:
+    description: The entities to cast sound to
+    example: '[media_player.bedroom_clock]'
+  volume:
+    description: Volume
+    example: 1
+
+sequence:
+  - repeat:
+      count: '{{ entities | length }}'
+      sequence:
+        - variables:
+            entity: '{{ entities[repeat.index-1] }}'
+            
+        - service: script.play_tts
+          data:
+            entity: '{{ entity }}'
+            volume: '{{ volume }}'

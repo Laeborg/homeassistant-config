@@ -1,0 +1,17 @@
+alias: Set volume
+mode: parallel
+
+fields:
+  entity:
+    description: The entity to cast sound to
+    example: media_player.bedroom_clock
+  volume:
+    description: Volume
+    example: 1
+
+sequence:
+  - service: media_player.volume_set
+    data:
+      volume_level: '{{ volume }}'
+    target:
+      entity_id: '{{ entity }}'
