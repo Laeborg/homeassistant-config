@@ -18,8 +18,8 @@ sequence:
       volume_level: '{{ volume }}'
     target:
       entity_id: '{{ entity }}'
-      
-  - service: tts.google_translate_say
+
+  - service: tts.cloud_say
     data:
       message: '{{ message }}'
       cache: true
