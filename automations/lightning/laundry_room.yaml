@@ -4,14 +4,14 @@
   trigger:
     - platform: time
       at: 05:30
-      
+
     - platform: sun
       event: sunset
       offset: '-0:30'
-      
+
     - platform: time
       at: 00:00
-      
+
     - platform: sun
       event: sunrise
       offset: '+0:30'
@@ -28,26 +28,31 @@
           {% if trigger.now.hour == 0 %}
             switch.turn_off
           {% else %}
-            switch.turn_on
+            {% if states.sun.sun.state == 'below_horizon' %}
+              switch.turn_on
+            {% endif %}
           {% endif %}
         {% endif %}
       data:
         entity_id: switch.laundry_room_spots
-      
+
 # Front Door Light - Toggle based on sun and time
 - alias: '[LIGHTNING] Front Door Light - Toggle based on sun and time'
 
   trigger:
     - platform: time
       at: 05:30
-      
+
     - platform: sun
       event: sunset
       offset: '-0:30'
-      
+
+    - platform: time
+      at: 08:00
+
     - platform: time
       at: 00:00
-      
+
     - platform: sun
       event: sunrise
       offset: '+0:30'
@@ -64,12 +69,14 @@
           {% if trigger.now.hour == 0 %}
             light.turn_off
           {% else %}
-            light.turn_on
+            {% if states.sun.sun.state == 'below_horizon' %}
+              light.turn_on
+            {% endif %}
           {% endif %}
         {% endif %}
       data:
         entity_id: light.front_door_light
-      
+
 # Laundry Room Light - Turn on when door open
 - alias: '[LIGHTNING] Laundry Room Light - Turn on when Front Door opens'
 
@@ -77,37 +84,37 @@
     - platform: state
       entity_id: binary_sensor.front_door_contact_sensor_contact
       to: 'on'
-      
+
     - platform: state
       entity_id: binary_sensor.kitchen_door_sensor_contact
       to: 'on'
-      
+
   condition:
     - condition: state
       entity_id: light.laundry_room_light
       state: 'off'
-      
+
   action:
     - service: light.turn_on
       entity_id: light.laundry_room_light
-      
+
     - wait_for_trigger:
       - platform: state
         entity_id: binary_sensor.front_door_contact_sensor_contact
         to: 'off'
         for:
           minutes: 5
-          
+
       - platform: state
         entity_id: binary_sensor.kitchen_door_sensor_contact
         to: 'off'
         for:
           minutes: 5
-          
+
       timeout:
         minutes: 60
-        
+
       continue_on_timeout: true
-    
+
     - service: light.turn_off
       entity_id: light.laundry_room_light
